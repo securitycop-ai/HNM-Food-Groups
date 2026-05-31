@@ -10,40 +10,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      /* ArivuLabs widget — constrain to viewport */
+      /* ── Prevent widget from affecting page layout ── */
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      /* Force every arivu element to be fixed + isolated */
+      #arivu-widget-root,
       #arivu-widget-container,
-      [id^="arivu"],
-      [class^="arivu"],
-      [id*="arivu-widget"],
-      [class*="arivu-widget"] {
-        max-width: min(380px, calc(100vw - 24px)) !important;
-        right: 12px !important;
-        bottom: 12px !important;
+      #arivu-launcher,
+      div[id*="arivu"],
+      div[class*="arivu"] {
+        position: fixed !important;
+        bottom: 16px !important;
+        right: 16px !important;
+        left: auto !important;
+        top: auto !important;
+        width: auto !important;
+        max-width: min(360px, calc(100vw - 32px)) !important;
+        z-index: 9999 !important;
         box-sizing: border-box !important;
+        transform-origin: bottom right !important;
       }
-      /* Panel specifically */
-      [id*="arivu-panel"],
-      [class*="arivu-panel"],
-      [class*="widget-panel"],
-      [class*="widgetPanel"] {
-        max-width: min(360px, calc(100vw - 24px)) !important;
-        max-height: calc(100vh - 100px) !important;
-        right: 12px !important;
+
+      /* Panel (open state) */
+      div[class*="panel"],
+      div[class*="Panel"],
+      div[id*="panel"],
+      div[id*="Panel"] {
+        max-width: min(360px, calc(100vw - 32px)) !important;
+        max-height: calc(100svh - 100px) !important;
+        width: min(360px, calc(100vw - 32px)) !important;
         overflow-y: auto !important;
+        overflow-x: hidden !important;
+        right: 0 !important;
+        left: auto !important;
       }
-      /* Mobile — make it smaller */
-      @media (max-width: 480px) {
-        #arivu-widget-container,
-        [id^="arivu"],
-        [class^="arivu"],
-        [id*="arivu-widget"],
-        [class*="arivu-widget"],
-        [class*="widget-panel"],
-        [class*="widgetPanel"] {
-          max-width: calc(100vw - 16px) !important;
-          right: 8px !important;
-          left: 8px !important;
-          width: auto !important;
+
+      /* Scale down on small screens */
+      @media (max-width: 420px) {
+        div[id*="arivu"],
+        div[class*="arivu"] {
+          transform: scale(0.88) !important;
+          transform-origin: bottom right !important;
+          right: 0px !important;
+          bottom: 0px !important;
         }
       }
     </style>
