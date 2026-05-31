@@ -10,7 +10,7 @@ const About = () => {
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">About Us</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">About HNM Food Groups</h1>
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
-            Founded on the belief that everyone deserves access to pure, organic nutrition no compromises.
+            Founded on the belief that everyone deserves access to pure, natural nutrition no compromises.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ const About = () => {
             <div className="bg-white/5 border border-white/10 rounded-xl p-8">
               <h4 className="font-serif text-2xl text-white mb-3">Our Vision</h4>
               <p className="text-white/60 leading-relaxed">
-                To become the leading provider of organic food products in the UK, setting new standards for quality,
+                To become a leading provider of clean-label, natural food products in the UK, setting new standards for quality,
                 health, and sustainability in the food industry.
               </p>
             </div>
@@ -157,7 +157,7 @@ const About = () => {
           <div className="mt-16 bg-[#f5e3b1]/5 border border-[#f5e3b1]/15 rounded-2xl px-8 py-12 text-center">
             <h3 className="font-serif text-3xl text-white mb-4">Join Our Journey</h3>
             <p className="text-white/60 max-w-[520px] mx-auto text-[15px] mb-8">
-              Experience the difference that pure, organic nutrition can make in your family's life. From our family
+              Experience the difference that pure, natural nutrition can make in your family's life. From our family
               to yours, we're committed to bringing you the very best in healthy, delicious food products.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -17,8 +17,8 @@ const WhyUs = () => {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Leaf, title: "Natural & Organic", desc: "We source only naturally derived ingredients from trusted organic farms. No synthetic inputs, no shortcuts." },
-              { icon: ShieldCheck, title: "No Preservatives", desc: "Our formulations are entirely free from synthetic preservatives, artificial colours, and chemical additives." },
+              { icon: Leaf, title: "Natural Ingredients", desc: "We aim to source naturally derived ingredients from trusted farms. Organic certification is in progress." },
+              { icon: ShieldCheck, title: "No Preservatives", desc: "Our target formulations are entirely free from synthetic preservatives, artificial colours, and chemical additives." },
               { icon: Zap, title: "High in Protein", desc: "Nutrient-dense formulations designed to deliver sustained energy and real nutritional value every morning." },
               { icon: Heart, title: "Family Focused", desc: "Created with every member of the family in mind for adults and children over 12 months — always check allergen information." },
               { icon: Globe, title: "Culturally Inspired", desc: "Drawing on global culinary traditions to create breakfast experiences that are both nutritious and culturally meaningful." },

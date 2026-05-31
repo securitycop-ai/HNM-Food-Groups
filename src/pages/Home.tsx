@@ -68,19 +68,20 @@ const Home = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            {/* Product image SVG branded box */}
+            {/* Product image — Coming Soon masked */}
             <div className="relative flex items-center justify-center order-1 lg:order-1">
-              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl">
+              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl relative">
                 <img
                   src="/images/hnm-cereal-box.svg"
-                  alt="HNM Organic Millet Cereal Box"
-                  className="w-full h-auto object-contain p-4"
+                  alt="HNM Millet Cereal — Coming Soon"
+                  className="w-full h-auto object-contain p-4 blur-sm opacity-60"
                 />
-              </div>
-              <div className="absolute -bottom-3 -right-2 sm:-bottom-4 sm:-right-4 bg-[#f5e3b1] text-[#1a0800] rounded-xl px-3 sm:px-5 py-3 sm:py-4 shadow-xl">
-                <p className="font-bold text-[13px] sm:text-[14px] leading-tight">Coming</p>
-                <p className="font-bold text-[13px] sm:text-[14px] leading-tight">Soon</p>
-                <p className="text-[10px] sm:text-[11px] mt-1 opacity-70">Q4 2026</p>
+                {/* Coming Soon overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/50 backdrop-blur-[2px]">
+                  <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
+                  <p className="font-serif text-2xl sm:text-3xl text-white font-bold">Q4 2026</p>
+                  <p className="text-white/50 text-[12px] mt-2">Product in Development</p>
+                </div>
               </div>
             </div>
             {/* Text */}

@@ -17,8 +17,14 @@ const Products = () => {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-24">
             <div className="relative order-2 lg:order-1 flex items-center justify-center">
-              <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/images/hnm-cereal-box-photo.png" alt="HNM Organic Millet Cereal Box" className="w-full h-auto object-contain" />
+              <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative">
+                <img src="/images/hnm-cereal-box-photo.png" alt="HNM Millet Cereal — Coming Soon" className="w-full h-auto object-contain blur-sm opacity-55" />
+                {/* Coming Soon overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/55 backdrop-blur-[2px]">
+                  <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
+                  <p className="font-serif text-3xl text-white font-bold">Q4 2026</p>
+                  <p className="text-white/50 text-[13px] mt-2">Product in Development</p>
+                </div>
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -26,15 +32,15 @@ const Products = () => {
                 <Leaf size={12} className="text-[#f5e3b1]" />
                 <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Flagship Product</span>
               </div>
-              <h2 className="font-serif text-4xl text-white mb-4">Organic Millet Cereal</h2>
+              <h2 className="font-serif text-4xl text-white mb-4">Millet Cereal</h2>
               <p className="text-white/65 text-[16px] leading-relaxed mb-8">
-                Our hero product — a wholesome breakfast cereal made from premium organic millet grains. Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
+                Our hero product — a wholesome breakfast cereal made from premium millet grains from organic farms (certification in progress). Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
                   "Organic millet (certification pending)",
                   "No artificial additives",
-                  "No preservatives",
+                  "No preservatives (target formulation)",
                   "Plant-based protein (target)",
                   "B vitamins (target formulation)",
                   "Iron & minerals (target formulation)",
