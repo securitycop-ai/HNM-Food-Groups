@@ -14,7 +14,7 @@ const tagColours: Record<string, string> = {
 const Blog = () => {
   return (
     <div className="pt-[76px]">
-      <section className="py-24 px-8">
+      <section className="py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">From the CEO's Desk</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">Insights & Stories</h1>
@@ -32,9 +32,9 @@ const Blog = () => {
         </div>
       </section>
 
-      <section className="py-8 px-8 border-t border-white/10 pb-24">
+      <section className="py-6 sm:py-8 px-4 sm:px-8 border-t border-white/10 pb-24">
         <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}

@@ -1,7 +1,7 @@
 const Media = () => {
   return (
     <div className="pt-[76px]">
-      <section className="py-16 sm:py-24 px-4 sm:px-8">
+      <section className="py-24 px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Media</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">See HNM in Action</h1>
@@ -12,7 +12,7 @@ const Media = () => {
       </section>
 
       {/* Featured video — large, with audio */}
-      <section className="px-4 sm:px-8 pb-12 sm:pb-16 border-t border-white/10 pt-16">
+      <section className="px-8 pb-16 border-t border-white/10 pt-16">
         <div className="max-w-[1240px] mx-auto">
           <div className="mb-4 flex items-center gap-3">
             <span className="text-[11px] font-bold tracking-wide px-3 py-1 rounded-full bg-[#f5e3b1]/10 text-[#f5e3b1] border border-[#f5e3b1]/20">

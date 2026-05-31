@@ -3,10 +3,10 @@ import { Leaf, ShieldCheck, Zap, CheckCircle } from "lucide-react";
 const Products = () => {
   return (
     <div className="pt-[76px]">
-      <section className="py-24 px-8">
+      <section className="py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Our Products</p>
-          <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">Clean-Label Breakfast Cereals</h1>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white mb-6">Clean-Label Breakfast Cereals</h1>
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
             A new line of naturally sourced, additive-free cereals designed for the UK market — nutritious, culturally inspired, and loved by families.
           </p>
@@ -15,7 +15,7 @@ const Products = () => {
 
       <section className="py-16 px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-24">
             <div className="relative order-2 lg:order-1 flex items-center justify-center">
               <div className="aspect-square w-full max-w-md rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 flex items-center justify-center">
                 <img src="/images/hnm-cereal-box.svg" alt="HNM Organic Millet Cereal Box" className="w-full h-full object-contain p-4" />

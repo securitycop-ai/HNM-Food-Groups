@@ -99,5 +99,23 @@
     @apply bg-background text-foreground;
     overflow-x: hidden;
     max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Smooth tap highlight removal on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  /* Better touch targets on mobile */
+  button, a {
+    touch-action: manipulation;
+  }
+
+  /* Prevent font scaling on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
   }
 }

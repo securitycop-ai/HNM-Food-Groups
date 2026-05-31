@@ -129,7 +129,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-[#140600]/95 backdrop-blur-xl text-white/45 pt-20 px-8 pb-0">
+      <footer className="bg-[#140600]/95 backdrop-blur-xl text-white/45 pt-12 sm:pt-20 px-4 sm:px-8 pb-0">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-12">
           {/* Brand */}
           <div>
@@ -204,7 +204,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="max-w-[1240px] mx-auto mt-16 border-t border-white/10 py-6 pb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="max-w-[1240px] mx-auto mt-10 sm:mt-16 border-t border-white/10 py-6 pb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-[13px] text-white/40">{t("footer_copyright")}</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {([

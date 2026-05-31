@@ -3,7 +3,7 @@ import { Leaf, ShieldCheck, Zap, Heart, Globe, FlaskConical } from "lucide-react
 const WhyUs = () => {
   return (
     <div className="pt-[76px]">
-      <section className="py-24 px-8">
+      <section className="py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Why Choose HNM</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">Our Commitment to Quality</h1>

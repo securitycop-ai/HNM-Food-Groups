@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 const Contact = () => {
   return (
     <div className="pt-[76px]">
-      <section className="py-24 px-8">
+      <section className="py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Contact</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">Get in Touch</h1>
@@ -13,7 +13,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-16 px-8 border-t border-white/10">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[900px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
