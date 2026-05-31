@@ -68,7 +68,7 @@ const Home = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            {/* Product image — SVG branded box */}
+            {/* Product image SVG branded box */}
             <div className="relative flex items-center justify-center order-1 lg:order-1">
               <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl">
                 <img

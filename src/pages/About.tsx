@@ -10,7 +10,7 @@ const About = () => {
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">About Us</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">About HNM Food Groups</h1>
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
-            Founded on the belief that everyone deserves access to pure, organic nutrition — no compromises.
+            Founded on the belief that everyone deserves access to pure, organic nutrition no compromises.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ const About = () => {
                   This philosophy became the bedrock of HNM Food Groups.
                 </p>
               </div>
-              <p className="text-right text-white/50 text-[14px] mt-6 italic">— Harsh Sanmukh, Founder & CEO</p>
+              <p className="text-right text-white/50 text-[14px] mt-6 italic">: Harsh Sanmukh, Founder & CEO</p>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ const About = () => {
                 <strong className="text-[#f5e3b1]">
                   I want all our products to be so healthy and pure that even a newborn baby can have them.
                 </strong>{" "}
-                This means no harmful preservatives, no artificial colours, no synthetic flavours — just 100% organic
+                This means no harmful preservatives, no artificial colours, no synthetic flavours just 100% organic
                 goodness that nature intended.
               </p>
             </div>

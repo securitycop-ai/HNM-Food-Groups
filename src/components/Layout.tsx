@@ -143,17 +143,17 @@ const Footer = () => {
                   className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0077b5]/20 hover:border-[#0077b5]/40 transition-colors group">
                   <Linkedin size={16} className="text-white/50 group-hover:text-[#0077b5] transition-colors" />
                 </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Instagram — coming soon">
+                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Instagram coming soon">
                   <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500/20 hover:border-pink-500/40 transition-colors group cursor-pointer">
                     <Instagram size={16} className="text-white/50 group-hover:text-pink-400 transition-colors" />
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="X / Twitter — coming soon">
+                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="X / Twitter coming soon">
                   <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-colors group cursor-pointer">
                     <Twitter size={16} className="text-white/50 group-hover:text-white transition-colors" />
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Facebook — coming soon">
+                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Facebook coming soon">
                   <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1877f2]/20 hover:border-[#1877f2]/40 transition-colors group cursor-pointer">
                     <Facebook size={16} className="text-white/50 group-hover:text-[#1877f2] transition-colors" />
                   </div>

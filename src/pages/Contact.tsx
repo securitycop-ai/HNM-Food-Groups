@@ -8,7 +8,7 @@ const Contact = () => {
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Contact</p>
           <h1 className="font-serif text-5xl md:text-6xl text-white mb-6">Get in Touch</h1>
           <p className="text-white/60 text-lg max-w-[480px] mx-auto">
-            Whether you're interested in retail partnerships, product enquiries, or airline catering — we'd love to hear from you.
+            Whether you're interested in retail partnerships, product enquiries, or airline catering we'd love to hear from you.
           </p>
         </div>
       </section>

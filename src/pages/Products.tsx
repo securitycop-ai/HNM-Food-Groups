@@ -8,7 +8,7 @@ const Products = () => {
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Our Products</p>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white mb-6">Clean-Label Breakfast Cereals</h1>
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
-            A new line of naturally sourced, additive-free cereals designed for the UK market — nutritious, culturally inspired, and loved by families.
+            A new line of naturally sourced, additive-free cereals designed for the UK market nutritious, culturally inspired, and loved by families.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ const Products = () => {
               </div>
               <h2 className="font-serif text-4xl text-white mb-4">Organic Millet Cereal</h2>
               <p className="text-white/65 text-[16px] leading-relaxed mb-8">
-                Our hero product — a wholesome breakfast cereal made from premium organic millet grains. Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
+                Our hero product a wholesome breakfast cereal made from premium organic millet grains. Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
@@ -69,8 +69,8 @@ const Products = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: Zap, title: "High Protein", desc: "Each serving delivers substantial plant-based protein to power your morning and keep you energised throughout the day." },
-                { icon: Leaf, title: "Natural Ingredients", desc: "Sourced from certified organic farms. No fillers, no artificial colours, no synthetic preservatives — just real food." },
-                { icon: ShieldCheck, title: "Regulatory Compliant", desc: "Formulated to meet UK and EU food safety and nutritional labelling standards for retail and airline catering." },
+                { icon: Leaf, title: "Natural Ingredients", desc: "Sourced from certified organic farms. No fillers, no artificial colours, no synthetic preservatives just real food." },
+                { icon: ShieldCheck, title: "Compliance in Progress", desc: "Our formulations are being developed in line with UK and EU food safety standards. Full compliance documentation expected Q4 2026." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-7 hover:border-[#f5e3b1]/30 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-[#f5e3b1]/10 flex items-center justify-center mb-5">
@@ -83,12 +83,15 @@ const Products = () => {
             </div>
           </div>
 
-          <div className="mt-16 bg-[#f5e3b1]/5 border border-[#f5e3b1]/15 rounded-2xl px-8 py-10 text-center">
-            <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-3">In Development</p>
-            <h3 className="font-serif text-3xl text-white mb-4">Expanding Our Breakfast Range</h3>
+          <div className="mt-16 bg-[#f5e3b1]/5 border border-[#f5e3b1]/15 rounded-2xl px-8 py-12 text-center">
+            <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-3">Coming Soon</p>
+            <h3 className="font-serif text-3xl text-white mb-4">Available in Retail — Expected Q4 2026</h3>
             <p className="text-white/60 max-w-[500px] mx-auto text-[15px]">
-              We're developing new culturally inspired convenience foods for both retail and airline catering segments. Stay tuned for updates.
+              Our products are currently in development and will be available in retail and airline catering segments from Q4 2026. Register your interest by contacting us directly.
             </p>
+            <a href="mailto:harsh@hnmfoodgroup.com" className="inline-flex items-center gap-2 mt-6 bg-[#f5e3b1] text-[#1a0800] px-6 py-3 rounded font-bold text-[12px] tracking-[0.8px] uppercase hover:bg-white transition-colors shadow-lg">
+              Register Interest
+            </a>
           </div>
         </div>
       </section>
