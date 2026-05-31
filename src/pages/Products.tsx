@@ -8,7 +8,7 @@ const Products = () => {
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Our Products</p>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white mb-6">Clean-Label Breakfast Cereals</h1>
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
-            A new line of naturally sourced, additive-free cereals designed for the UK market nutritious, culturally inspired, and loved by families.
+            A new line of naturally sourced, additive-free cereals in development for the UK market. Culturally inspired, family focused, and launching Q4 2026.
           </p>
         </div>
       </section>
@@ -35,10 +35,10 @@ const Products = () => {
                   "Organic millet (certification pending)",
                   "No artificial additives",
                   "No preservatives",
-                  "High in plant protein",
-                  "Rich in B vitamins",
-                  "Rich in iron & minerals",
-                  "Gluten-aware formulation",
+                  "Plant-based protein (target)",
+                  "B vitamins (target formulation)",
+                  "Iron & minerals (target formulation)",
+                  "Naturally millet-based (not tested for gluten — may contain traces)",
                   "Family friendly",
                 ].map(f => (
                   <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13.5px]">
@@ -68,7 +68,7 @@ const Products = () => {
             <h3 className="font-serif text-3xl text-white text-center mb-12">Nutritional Highlights</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: Zap, title: "High Protein (Target)", desc: "Our formulation target is substantial plant-based protein to power your morning and keep you energised throughout the day." },
+                { icon: Zap, title: "Plant-Based Protein", desc: "Our target formulation aims to deliver substantial plant-based protein to power your morning and keep you energised throughout the day." },
                 { icon: Leaf, title: "Natural Ingredients", desc: "Formulated with naturally sourced ingredients; organic certification in progress. No fillers, no artificial colours, no synthetic preservatives just real food." },
                 { icon: ShieldCheck, title: "Compliance in Progress", desc: "Our formulations are being developed in line with UK and EU food safety standards. Full compliance documentation expected Q4 2026." },
               ].map(({ icon: Icon, title, desc }) => (

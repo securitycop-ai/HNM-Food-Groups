@@ -20,7 +20,7 @@ const WhyUs = () => {
               { icon: Leaf, title: "Natural & Organic", desc: "We source only naturally derived ingredients from trusted organic farms. No synthetic inputs, no shortcuts." },
               { icon: ShieldCheck, title: "No Preservatives", desc: "Our formulations are entirely free from synthetic preservatives, artificial colours, and chemical additives." },
               { icon: Zap, title: "High in Protein", desc: "Nutrient-dense formulations designed to deliver sustained energy and real nutritional value every morning." },
-              { icon: Heart, title: "Family Focused", desc: "Created with every member of the family in mind from young children to adults, our cereals are safe and delicious for all." },
+              { icon: Heart, title: "Family Focused", desc: "Created with every member of the family in mind for adults and children over 12 months — always check allergen information." },
               { icon: Globe, title: "Culturally Inspired", desc: "Drawing on global culinary traditions to create breakfast experiences that are both nutritious and culturally meaningful." },
               { icon: FlaskConical, title: "R&D Driven", desc: "Backed by rigorous product development and retail market research to meet evolving UK consumer preferences." },
             ].map(({ icon: Icon, title, desc }) => (

@@ -162,7 +162,7 @@ const About = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/products" className="inline-flex items-center gap-2 bg-[#f5e3b1] text-[#1a0800] px-8 py-4 rounded font-bold text-[13px] tracking-[0.8px] uppercase hover:bg-white transition-colors shadow-lg">
-                Shop Our Products <ArrowRight size={16} />
+                Register Interest <ArrowRight size={16} />
               </Link>
               <a
                 href="https://www.linkedin.com/company/hnm-food-groups/"

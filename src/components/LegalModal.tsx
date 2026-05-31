@@ -35,7 +35,7 @@ const Privacy = () => (
       <Section title="2. What Data We Collect and How">
         <p>This website <strong className="text-white/90">does not collect any data through forms, databases, or tracking systems.</strong></p>
         <p>The only way we receive personal information is when you choose to contact us directly by email at {CONTACT.email}. In that case, we receive whatever information you include in your message — typically your name and email address.</p>
-        <p>We do not use Google Analytics, advertising pixels, or any third-party tracking scripts.</p>
+        <p>We do not use Google Analytics, advertising pixels, voice agents, or any third-party tracking scripts. No third-party data-collection widgets are embedded on this site.</p>
       </Section>
 
       <Section title="3. Cookies">

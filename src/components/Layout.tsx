@@ -204,8 +204,15 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Pre-launch disclaimer */}
+        <div className="max-w-[1240px] mx-auto mt-10 sm:mt-16 border-t border-white/10 pt-8">
+          <p className="text-[12px] text-white/30 leading-relaxed text-center max-w-[800px] mx-auto">
+            <strong className="text-white/40">Pre-launch notice:</strong> HNM Food Group Ltd is a pre-launch food company. All product descriptions, nutritional claims, and formulation details reflect current development targets and are subject to change. Organic certification, nutritional analysis, and full regulatory compliance documentation are in progress. Final products may differ from descriptions shown.
+          </p>
+        </div>
+
         {/* Bottom bar */}
-        <div className="max-w-[1240px] mx-auto mt-10 sm:mt-16 border-t border-white/10 py-6 pb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div className="max-w-[1240px] mx-auto mt-6 border-t border-white/10 py-6 pb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-[13px] text-white/40">{t("footer_copyright")}</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {([
