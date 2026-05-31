@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Mail, MapPin, Linkedin, Instagram, Twitter, Facebook, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage, languages } from "@/context/LanguageContext";
 import LegalModal, { type LegalPage } from "./LegalModal";
@@ -140,24 +140,9 @@ const Footer = () => {
             <div className="mt-6">
               <p className="text-[11px] font-bold tracking-[2px] uppercase text-[#f5e3b1] mb-3">{t("follow_us")}</p>
               <div className="flex gap-3">
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="LinkedIn"
+                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Follow HNM Food Group on LinkedIn"
                   className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0077b5]/20 hover:border-[#0077b5]/40 transition-colors group">
                   <Linkedin size={16} className="text-white/50 group-hover:text-[#0077b5] transition-colors" />
-                </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Instagram coming soon">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500/20 hover:border-pink-500/40 transition-colors group cursor-pointer">
-                    <Instagram size={16} className="text-white/50 group-hover:text-pink-400 transition-colors" />
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="X / Twitter coming soon">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-colors group cursor-pointer">
-                    <Twitter size={16} className="text-white/50 group-hover:text-white transition-colors" />
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="Facebook coming soon">
-                  <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#1877f2]/20 hover:border-[#1877f2]/40 transition-colors group cursor-pointer">
-                    <Facebook size={16} className="text-white/50 group-hover:text-[#1877f2] transition-colors" />
-                  </div>
                 </a>
               </div>
             </div>
@@ -167,7 +152,7 @@ const Footer = () => {
           <div>
             <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_products")}</h5>
             <ul className="space-y-3">
-              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Organic Millet Cereal</Link></li>
+              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Millet Cereal</Link></li>
               <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Breakfast Range</Link></li>
             </ul>
           </div>

@@ -74,7 +74,7 @@ const Products = () => {
             <h3 className="font-serif text-3xl text-white text-center mb-12">Nutritional Highlights</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: Zap, title: "Plant-Based Protein", desc: "Our target formulation aims to deliver substantial plant-based protein to power your morning and keep you energised throughout the day." },
+                { icon: Zap, title: "Plant-Based Protein", desc: "Our formulation is designed to include a meaningful source of plant-based protein to support a nutritious start to the day." },
                 { icon: Leaf, title: "Natural Ingredients", desc: "Formulated with naturally sourced ingredients; organic certification in progress. No fillers, no artificial colours, no synthetic preservatives just real food." },
                 { icon: ShieldCheck, title: "Compliance in Progress", desc: "Our formulations are being developed in line with UK and EU food safety standards. Full compliance documentation expected Q4 2026." },
               ].map(({ icon: Icon, title, desc }) => (
