@@ -17,8 +17,8 @@ const Products = () => {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-24">
             <div className="relative order-2 lg:order-1 flex items-center justify-center">
-              <div className="aspect-square w-full max-w-md rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 flex items-center justify-center">
-                <img src="/images/hnm-cereal-box.svg" alt="HNM Organic Millet Cereal Box" className="w-full h-full object-contain p-4" />
+              <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
+                <img src="/images/hnm-cereal-box-photo.png" alt="HNM Organic Millet Cereal Box" className="w-full h-auto object-contain" />
               </div>
             </div>
             <div className="order-1 lg:order-2">

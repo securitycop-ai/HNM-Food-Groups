@@ -68,13 +68,13 @@ const Home = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            {/* Product image — new photorealistic box */}
+            {/* Product image — SVG branded box */}
             <div className="relative flex items-center justify-center order-1 lg:order-1">
-              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl">
                 <img
-                  src="/images/hnm-cereal-box-photo.png"
+                  src="/images/hnm-cereal-box.svg"
                   alt="HNM Organic Millet Cereal Box"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain p-4"
                 />
               </div>
               <div className="absolute -bottom-3 -right-2 sm:-bottom-4 sm:-right-4 bg-[#f5e3b1] text-[#1a0800] rounded-xl px-3 sm:px-5 py-3 sm:py-4 shadow-xl">
