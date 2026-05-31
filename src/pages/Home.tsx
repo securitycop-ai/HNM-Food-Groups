@@ -73,7 +73,7 @@ const Home = () => {
               <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl relative">
                 <img
                   src="/images/hnm-cereal-box.svg"
-                  alt="HNM Millet Cereal Coming Soon"
+                  alt="HNM Multi Grain Cereal Coming Soon"
                   className="w-full h-auto object-contain p-4 blur-sm opacity-60"
                 />
                 {/* Coming Soon overlay */}
@@ -90,7 +90,7 @@ const Home = () => {
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">{t("product_heading")}</h2>
               <p className="text-white/65 text-[15px] sm:text-[16px] leading-relaxed mb-5 sm:mb-6">{t("product_desc")}</p>
               <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
-                {["Millet grains from organic farms (certification pending)","No added sugar in target formulation","Naturally millet-based (not tested for gluten)","Target formulation contains B vitamins and iron","Suitable for adults and children over 12 months"].map(item => (
+                {["Multi grain blends from organic farms (certification pending)","No added sugar in target formulation","Naturally multi grain-based (not tested for gluten)","Target formulation contains B vitamins and iron","Suitable for adults and children over 12 months"].map(item => (
                   <li key={item} className="flex items-center gap-3 text-white/70 text-[13px] sm:text-[14px]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#f5e3b1] shrink-0" />{item}
                   </li>
