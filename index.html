@@ -37,36 +37,32 @@
         }
       };
 
-      function constrainWidget() {
-        // Find the widget's outermost container — it's the last fixed div appended to body
-        var allFixed = Array.from(document.querySelectorAll('body > div')).filter(function(el) {
-          var s = window.getComputedStyle(el);
-          return s.position === 'fixed' || el.id.includes('arivu') || (el.className && el.className.includes && el.className.includes('arivu'));
-        });
-        allFixed.forEach(function(el) {
-          // Only target widget divs not our React root
-          if (el.id === 'root') return;
-          var maxH = Math.min(560, window.innerHeight - 80);
-          var maxW = Math.min(340, window.innerWidth - 32);
-          el.style.cssText += [
-            'position:fixed!important',
-            'bottom:16px!important',
-            'right:16px!important',
-            'left:auto!important',
-            'top:auto!important',
-            'max-width:' + maxW + 'px!important',
-            'width:' + maxW + 'px!important',
-            'max-height:' + maxH + 'px!important',
-            'overflow-y:auto!important',
-            'overflow-x:hidden!important',
-            'z-index:9999!important',
-            'box-sizing:border-box!important',
-          ].join(';');
-          // Also constrain all children
-          el.querySelectorAll('*').forEach(function(child) {
-            child.style.maxWidth = '100%';
-            child.style.boxSizing = 'border-box';
-          });
+      function applyWidgetStyles() {
+        // Find every direct child of body that is NOT our React root
+        var bodyChildren = Array.from(document.body.children);
+        bodyChildren.forEach(function(el) {
+          if (el.id === 'root' || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+          var computed = window.getComputedStyle(el);
+          // Target fixed/absolute positioned elements (the widget)
+          if (computed.position === 'fixed' || computed.position === 'absolute' ||
+              (el.id && el.id.toLowerCase().includes('arivu')) ||
+              (typeof el.className === 'string' && el.className.toLowerCase().includes('arivu'))) {
+
+            // Scale down to ~65% — anchored bottom-right
+            el.style.cssText = [
+              'position:fixed',
+              'bottom:16px',
+              'right:16px',
+              'left:auto',
+              'top:auto',
+              'transform:scale(0.72)',
+              'transform-origin:bottom right',
+              'z-index:9999',
+              'max-width:420px',
+              'width:420px',
+              'overflow:visible',
+            ].join('!important;') + '!important';
+          }
         });
       }
 
@@ -76,11 +72,13 @@
       script.onload = function () {
         if (window.ArivuWidget) {
           window.ArivuWidget.init(config);
-          // Run constraint after init and on mutations
-          setTimeout(constrainWidget, 600);
-          setTimeout(constrainWidget, 1500);
-          var observer = new MutationObserver(function() { constrainWidget(); });
-          observer.observe(document.body, { childList: true, subtree: false });
+          // Apply immediately, then again after panel renders
+          setTimeout(applyWidgetStyles, 300);
+          setTimeout(applyWidgetStyles, 800);
+          setTimeout(applyWidgetStyles, 2000);
+          // Watch for new widget children (panel open/close)
+          var obs = new MutationObserver(function() { applyWidgetStyles(); });
+          obs.observe(document.body, { childList: true, subtree: false, attributes: false });
         }
       };
       document.body.appendChild(script);
