@@ -9,6 +9,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* ArivuLabs widget — constrain to viewport */
+      #arivu-widget-container,
+      [id^="arivu"],
+      [class^="arivu"],
+      [id*="arivu-widget"],
+      [class*="arivu-widget"] {
+        max-width: min(380px, calc(100vw - 24px)) !important;
+        right: 12px !important;
+        bottom: 12px !important;
+        box-sizing: border-box !important;
+      }
+      /* Panel specifically */
+      [id*="arivu-panel"],
+      [class*="arivu-panel"],
+      [class*="widget-panel"],
+      [class*="widgetPanel"] {
+        max-width: min(360px, calc(100vw - 24px)) !important;
+        max-height: calc(100vh - 100px) !important;
+        right: 12px !important;
+        overflow-y: auto !important;
+      }
+      /* Mobile — make it smaller */
+      @media (max-width: 480px) {
+        #arivu-widget-container,
+        [id^="arivu"],
+        [class^="arivu"],
+        [id*="arivu-widget"],
+        [class*="arivu-widget"],
+        [class*="widget-panel"],
+        [class*="widgetPanel"] {
+          max-width: calc(100vw - 16px) !important;
+          right: 8px !important;
+          left: 8px !important;
+          width: auto !important;
+        }
+      }
+    </style>
   </head>
   <body className="antialiased">
     <div id="root"></div>
