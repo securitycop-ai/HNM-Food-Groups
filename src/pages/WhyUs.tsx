@@ -18,8 +18,8 @@ const WhyUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Leaf, title: "Natural Ingredients", desc: "We aim to source naturally derived ingredients from trusted farms. Organic certification is in progress." },
-              { icon: ShieldCheck, title: "No Preservatives", desc: "Our target formulations are entirely free from synthetic preservatives, artificial colours, and chemical additives." },
-              { icon: Zap, title: "Plant Protein Focus", desc: "Our formulations are designed to include plant-based protein to support a balanced breakfast. (Target formulation)" },
+              { icon: ShieldCheck, title: "No Preservatives", desc: "Our formulations are designed to be free from synthetic preservatives, artificial colours, and chemical additives." },
+              { icon: Zap, title: "Plant Protein Focus", desc: "Our formulations are designed to include plant-based protein to support a balanced breakfast." },
               { icon: Heart, title: "Family Focused", desc: "Created with every member of the family in mind for adults and children over 12 months. Always check allergen information.." },
               { icon: Globe, title: "Culturally Inspired", desc: "Drawing on global culinary traditions to create breakfast experiences that are both nutritious and culturally meaningful." },
               { icon: FlaskConical, title: "R&D Driven", desc: "Backed by rigorous product development and retail market research to meet evolving UK consumer preferences." },
