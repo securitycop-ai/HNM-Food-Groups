@@ -18,7 +18,7 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_blog: "Blog",
     nav_media: "Media",
     nav_contact: "Contact",
-    hero_badge: "Clean Label · Naturally Sourced · UK Made",
+    hero_badge: "Clean Label · Naturally Sourced · Cardiff, Wales",
     hero_title1: "Pure Goodness",
     hero_title2: "for All",
     hero_sub: "Naturally sourced, additive-free breakfast cereals crafted for modern nutritional standards and inspired by global culinary traditions.",

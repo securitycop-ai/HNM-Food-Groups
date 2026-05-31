@@ -28,17 +28,17 @@ const Products = () => {
               </div>
               <h2 className="font-serif text-4xl text-white mb-4">Organic Millet Cereal</h2>
               <p className="text-white/65 text-[16px] leading-relaxed mb-8">
-                Our hero product a wholesome breakfast cereal made from premium organic millet grains. Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
+                Our hero product — a wholesome breakfast cereal made from premium organic millet grains. Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  "100% organic millet",
+                  "Organic millet (certification pending)",
                   "No artificial additives",
                   "No preservatives",
                   "High in plant protein",
                   "Rich in B vitamins",
                   "Rich in iron & minerals",
-                  "Gluten-conscious",
+                  "Gluten-aware formulation",
                   "Family friendly",
                 ].map(f => (
                   <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13.5px]">
@@ -49,16 +49,16 @@ const Products = () => {
               </div>
               <div className="flex gap-4 flex-wrap">
                 <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-xl">4.9★</p>
-                  <p className="text-white/50 text-[12px]">Rating</p>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-xl">UK</p>
+                  <p className="text-[#f5e3b1] font-bold text-[13px]">UK</p>
                   <p className="text-white/50 text-[12px]">Market</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-xl">Clean</p>
+                  <p className="text-[#f5e3b1] font-bold text-[13px]">Clean</p>
                   <p className="text-white/50 text-[12px]">Label</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
+                  <p className="text-[#f5e3b1] font-bold text-[13px]">Q4 2026</p>
+                  <p className="text-white/50 text-[12px]">Available</p>
                 </div>
               </div>
             </div>
@@ -68,8 +68,8 @@ const Products = () => {
             <h3 className="font-serif text-3xl text-white text-center mb-12">Nutritional Highlights</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { icon: Zap, title: "High Protein", desc: "Each serving delivers substantial plant-based protein to power your morning and keep you energised throughout the day." },
-                { icon: Leaf, title: "Natural Ingredients", desc: "Sourced from certified organic farms. No fillers, no artificial colours, no synthetic preservatives just real food." },
+                { icon: Zap, title: "High Protein (Target)", desc: "Our formulation target is substantial plant-based protein to power your morning and keep you energised throughout the day." },
+                { icon: Leaf, title: "Natural Ingredients", desc: "Formulated with naturally sourced ingredients; organic certification in progress. No fillers, no artificial colours, no synthetic preservatives just real food." },
                 { icon: ShieldCheck, title: "Compliance in Progress", desc: "Our formulations are being developed in line with UK and EU food safety standards. Full compliance documentation expected Q4 2026." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-7 hover:border-[#f5e3b1]/30 transition-colors">

@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Linkedin, Instagram, Twitter, Facebook, ChevronDow
 import { cn } from "@/lib/utils";
 import { useLanguage, languages } from "@/context/LanguageContext";
 import LegalModal, { type LegalPage } from "./LegalModal";
+import CookieBanner from "./CookieBanner";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -233,5 +234,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
     <Header />
     <main className="flex-grow z-10">{children}</main>
     <Footer />
+    <CookieBanner />
   </div>
 );

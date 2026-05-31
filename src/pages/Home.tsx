@@ -78,9 +78,9 @@ const Home = () => {
                 />
               </div>
               <div className="absolute -bottom-3 -right-2 sm:-bottom-4 sm:-right-4 bg-[#f5e3b1] text-[#1a0800] rounded-xl px-3 sm:px-5 py-3 sm:py-4 shadow-xl">
-                <p className="font-bold text-[18px] sm:text-[22px] leading-none">4.9</p>
-                <p className="text-[10px] sm:text-[11px] font-semibold tracking-wide">★★★★★</p>
-                <p className="text-[10px] sm:text-[11px] mt-1 opacity-70">Customer Rating</p>
+                <p className="font-bold text-[13px] sm:text-[14px] leading-tight">Coming</p>
+                <p className="font-bold text-[13px] sm:text-[14px] leading-tight">Soon</p>
+                <p className="text-[10px] sm:text-[11px] mt-1 opacity-70">Q4 2026</p>
               </div>
             </div>
             {/* Text */}

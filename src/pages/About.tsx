@@ -80,7 +80,7 @@ const About = () => {
               <p>
                 My vision is ambitious yet simple:{" "}
                 <strong className="text-[#f5e3b1]">
-                  I want all our products to be so healthy and pure that even a newborn baby can have them.
+                  My aspiration is to create products so pure and wholesome that the whole family can enjoy them with confidence.
                 </strong>{" "}
                 This means no harmful preservatives, no artificial colours, no synthetic flavours just 100% organic
                 goodness that nature intended.
@@ -134,7 +134,7 @@ const About = () => {
                   { label: "Registered Office", value: "14 Museum Place, Cardiff, Wales, CF10 3BH" },
                   { label: "Focus", value: "Clean-Label Breakfast Cereals" },
                   { label: "Markets", value: "Retail & Airline Catering" },
-                  { label: "Standards", value: "UK & EU Food Safety Compliant" },
+                  { label: "Standards", value: "UK & EU Standards (Pending)" },
                 ].map(({ label, value }) => (
                   <div key={label} className="bg-white/5 border border-white/10 rounded-xl px-6 py-5">
                     <p className="text-white/40 text-[11px] font-semibold tracking-wide uppercase mb-1">{label}</p>
