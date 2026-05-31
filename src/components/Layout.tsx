@@ -214,7 +214,7 @@ const Footer = () => {
               ["allergens",   "Allergen Information"],
             ] as [LegalPage, string][]).map(([key, label]) => (
               <button key={key} onClick={() => setLegalPage(key)}
-                className="text-[13px] text-white/35 hover:text-white/70 transition-colors underline underline-offset-2">
+                className="text-[13px] text-white/35 hover:text-white/70 transition-colors">
                 {label}
               </button>
             ))}

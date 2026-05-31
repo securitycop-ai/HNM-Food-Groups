@@ -13,5 +13,34 @@
   <body className="antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- ArivuLabs Voice Widget -->
+    <script>
+    (function () {
+      var config = {
+        "orgSlug": "hnm-food-group",
+        "agentSlug": "aditi",
+        "apiUrl": "https://api.arivulabs.ai",
+        "appUrl": "https://app.arivulabs.ai",
+        "theme": {
+          "position": "bottom-right",
+          "primaryColor": "#111111",
+          "secondaryColor": "#ffffff",
+          "icon": "phone",
+          "label": "Voice call",
+          "panelTitle": "Aditi",
+          "panelSubtitle": "HNM Food Group AI Receptionist",
+          "launcherStyle": "pill"
+        }
+      };
+      var script = document.createElement('script');
+      script.src = 'https://api.arivulabs.ai/widget/arivu-widget.js';
+      script.async = true;
+      script.onload = function () {
+        if (window.ArivuWidget) window.ArivuWidget.init(config);
+      };
+      document.body.appendChild(script);
+    })();
+    </script>
   </body>
 </html>
