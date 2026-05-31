@@ -6,9 +6,9 @@ const Home = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="pt-[76px]">
-      {/* Hero */}
-      <section className="min-h-[92vh] flex items-center justify-center px-8 relative overflow-hidden">
+    <div>
+      {/* Hero — full screen including behind the transparent nav */}
+      <section className="min-h-screen flex items-center justify-center px-8 relative overflow-hidden">
         {/* Background video — muted, looping, no audio */}
         <div className="absolute inset-0 z-0">
           <video
@@ -21,9 +21,10 @@ const Home = () => {
             <source src="/hnm-brand-video.mp4" type="video/mp4" />
           </video>
           {/* Dark overlay so text stays readable */}
-          <div className="absolute inset-0 bg-[#1a0800]/75" />
+          <div className="absolute inset-0 bg-[#1a0800]/70" />
         </div>
-        <div className="max-w-[1240px] mx-auto text-center z-10">
+        {/* Push content below the fixed navbar */}
+        <div className="max-w-[1240px] mx-auto text-center z-10 pt-[76px]">
           <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-4 py-2 mb-8">
             <Leaf size={14} className="text-[#f5e3b1]" />
             <span className="text-[#f5e3b1] text-[12px] font-semibold tracking-[1.5px] uppercase">{t("hero_badge")}</span>
@@ -47,7 +48,7 @@ const Home = () => {
       </section>
 
       {/* Value Props */}
-      <section className="py-24 px-8 border-t border-white/10">
+      <section className="py-24 px-8 border-t border-white/10 mt-0">
         <div className="max-w-[1240px] mx-auto">
           <div className="text-center mb-16">
             <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-3">{t("why_label")}</p>
