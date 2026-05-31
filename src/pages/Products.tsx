@@ -18,7 +18,7 @@ const Products = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-24">
             <div className="relative order-2 lg:order-1 flex items-center justify-center">
               <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative">
-                <img src="/images/hnm-cereal-box-photo.png" alt="HNM Millet Cereal — Coming Soon" className="w-full h-auto object-contain blur-sm opacity-55" />
+                <img src="/images/hnm-cereal-box-photo.png" alt="HNM Millet Cereal Coming Soon" className="w-full h-auto object-contain blur-sm opacity-55" />
                 {/* Coming Soon overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/55 backdrop-blur-[2px]">
                   <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
@@ -34,7 +34,7 @@ const Products = () => {
               </div>
               <h2 className="font-serif text-4xl text-white mb-4">Millet Cereal</h2>
               <p className="text-white/65 text-[16px] leading-relaxed mb-8">
-                Our hero product — a wholesome breakfast cereal made from premium millet grains from organic farms (certification in progress). Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
+                Our hero product, a wholesome breakfast cereal made from premium millet grains from organic farms (certification in progress). Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
@@ -44,7 +44,7 @@ const Products = () => {
                   "Plant-based protein (target)",
                   "B vitamins (target formulation)",
                   "Iron & minerals (target formulation)",
-                  "Naturally millet-based (not tested for gluten — may contain traces)",
+                  "Naturally millet-based (not tested for gluten, may contain traces)",
                   "Family friendly",
                 ].map(f => (
                   <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13.5px]">
@@ -91,7 +91,7 @@ const Products = () => {
 
           <div className="mt-16 bg-[#f5e3b1]/5 border border-[#f5e3b1]/15 rounded-2xl px-8 py-12 text-center">
             <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-3">Coming Soon</p>
-            <h3 className="font-serif text-3xl text-white mb-4">Available in Retail — Expected Q4 2026</h3>
+            <h3 className="font-serif text-3xl text-white mb-4">Available in Retail: Expected Q4 2026</h3>
             <p className="text-white/60 max-w-[500px] mx-auto text-[15px]">
               Our products are currently in development and will be available in retail and airline catering segments from Q4 2026. Register your interest by contacting us directly.
             </p>

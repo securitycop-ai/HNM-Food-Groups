@@ -34,7 +34,7 @@ const Privacy = () => (
 
       <Section title="2. What Data We Collect and How">
         <p>This website <strong className="text-white/90">does not collect any data through forms, databases, or tracking systems.</strong></p>
-        <p>The only way we receive personal information is when you choose to contact us directly by email at {CONTACT.email}. In that case, we receive whatever information you include in your message — typically your name and email address.</p>
+        <p>The only way we receive personal information is when you choose to contact us directly by email at {CONTACT.email}. In that case, we receive whatever information you include in your message, typically your name and email address.</p>
         <p>We do not use Google Analytics, advertising pixels, voice agents, or any third-party tracking scripts. No third-party data-collection widgets are embedded on this site.</p>
       </Section>
 
@@ -48,7 +48,7 @@ const Privacy = () => (
       </Section>
 
       <Section title="5. Legal Basis for Processing">
-        <p>When you email us, we process your personal data on the basis of <strong className="text-white/90">legitimate interest</strong> — specifically, to respond to your message. You are not required to contact us and can withdraw at any time by emailing us to request deletion of your correspondence.</p>
+        <p>When you email us, we process your personal data on the basis of <strong className="text-white/90">legitimate interest</strong>, specifically, to respond to your message. You are not required to contact us and can withdraw at any time by emailing us to request deletion of your correspondence.</p>
       </Section>
 
       <Section title="6. Data Retention">
@@ -110,7 +110,7 @@ export default function LegalModal({ page, onClose }: { page: LegalPage; onClose
     <div className="fixed inset-0 z-[500] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
       <div className="bg-[#1a0800] border border-[#f5e3b1]/15 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between px-8 py-5 border-b border-white/10">
-          <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2px] uppercase">HNM Food Group Ltd — Legal</p>
+          <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2px] uppercase">HNM Food Group Ltd</p>
           <button onClick={onClose} className="text-white/50 hover:text-white transition-colors p-1 rounded">
             <X size={18} />
           </button>
