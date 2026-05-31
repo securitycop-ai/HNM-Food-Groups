@@ -9,9 +9,19 @@ const Home = () => {
     <div className="pt-[76px]">
       {/* Hero */}
       <section className="min-h-[92vh] flex items-center justify-center px-8 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full opacity-10"
-            style={{ background: "radial-gradient(circle, #f5e3b1 0%, transparent 70%)" }} />
+        {/* Background video — muted, looping, no audio */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hnm-brand-video.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay so text stays readable */}
+          <div className="absolute inset-0 bg-[#1a0800]/75" />
         </div>
         <div className="max-w-[1240px] mx-auto text-center z-10">
           <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-4 py-2 mb-8">
