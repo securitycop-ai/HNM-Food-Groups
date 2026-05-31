@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/behind-the-scenes.jpg",
     tag: "LinkedIn",
     excerpt: "A peek behind the curtain at HNM Food Groups the passion and process behind our products.",
-    content: ["The magic of our food lies in the details. From sourcing the freshest ingredients to perfecting our recipes, every step is a labour of love."]
+    content: ["The journey behind our food lies in the details. From developing our recipes to researching ingredient sourcing, every step of our pre-launch development is a labour of love."]
   },
   {
     slug: "sharing-our-vision",
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       "Millets are not just a food trend; they are a return to our roots. These ancient grains, once a staple in Indian agriculture, are making a powerful comeback. They are a powerhouse of nutrition, packed with protein, fibre, vitamins, and minerals.",
       "At HNM Food Groups, we are proud to be at the forefront of this millet movement. Our journey began with a simple question: Why have we moved away from foods that are so inherently good for us?",
-      "We source our millets from certified organic farms, ensuring they are free from harmful pesticides and chemicals. Our process is simple and transparent, with no artificial preservatives, colours, or flavours.",
+      "We aim to source our grains from organic farms, with certification currently in progress to ensure they are free from harmful pesticides and chemicals. Our process is simple and transparent, with no artificial preservatives, colours, or flavours.",
       "Choosing millets is a choice for better health and a sustainable future. They are climate-resilient crops that require less water, making them a friend to our planet.",
     ],
   },
@@ -103,7 +103,7 @@ export const blogPosts: BlogPost[] = [
       "The word 'organic' is more than just a label; it's a promise. It's a commitment to food that is grown and processed without synthetic pesticides, GMOs, or harmful chemicals.",
       "For us at HNM Food Groups, 'organic' is non-negotiable. Every ingredient is sourced from farms that practice sustainable agriculture, promoting biodiversity and ecological balance.",
       "We believe that what we leave out of our food is just as important as what we put in. No artificial preservatives, no synthetic colours, no fake flavours.",
-      "Our vision is to create food so pure that even a newborn baby can have it. This is the standard we hold ourselves to every single day.",
+      "Our aspiration is to create food so wholesome and natural that the whole family can enjoy it with confidence. This is the personal quality standard we hold ourselves to every single day.",
     ],
   },
   {

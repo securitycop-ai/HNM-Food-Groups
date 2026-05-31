@@ -41,7 +41,7 @@ const Blog = () => {
                 to={`/blog/${post.slug}`}
                 className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-[#f5e3b1]/30 transition-all hover:-translate-y-1 duration-300"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden relative">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -51,6 +51,12 @@ const Blog = () => {
                       (e.target as HTMLImageElement).className = "w-full h-full object-contain p-8 opacity-30";
                     }}
                   />
+                  {/* Concept image label for AI-generated product visuals */}
+                  {(post.image.includes("hnm-cereal-box-photo") || post.image.includes("hnm-cereal-bowl") || post.image.includes("hnm-cereal-hero") || post.image.includes("hnm-family-cereal")) && (
+                    <span className="absolute bottom-2 right-2 bg-black/60 text-white/60 text-[10px] px-2 py-0.5 rounded font-medium tracking-wide">
+                      Concept image
+                    </span>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
