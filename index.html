@@ -25,17 +25,17 @@
     (function () {
       var config = {
         "orgSlug": "hnm-food-group",
-        "agentSlug": "aditi",
+        "agentSlug": "sheela-inbound-ai-receptionist",
         "apiUrl": "https://api.arivulabs.ai",
         "appUrl": "https://app.arivulabs.ai",
         "theme": {
-          "position": "bottom-right",
+          "position": "bottom-left",
           "primaryColor": "#111111",
           "secondaryColor": "#ffffff",
           "icon": "phone",
-          "label": "Voice call",
-          "panelTitle": "Aditi",
-          "panelSubtitle": "HNM Food Group AI Receptionist",
+          "label": "Voice chat",
+          "panelTitle": "Sheela - Inbound AI Receptionist",
+          "panelSubtitle": "Start a live voice conversation",
           "launcherStyle": "pill"
         }
       };
@@ -51,15 +51,15 @@
               (el.id && el.id.toLowerCase().includes('arivu')) ||
               (typeof el.className === 'string' && el.className.toLowerCase().includes('arivu'))) {
 
-            // Scale down to ~65% — anchored bottom-right
+            // Scale down to ~72% — anchored bottom-left
             el.style.cssText = [
               'position:fixed',
               'bottom:16px',
-              'right:16px',
-              'left:auto',
+              'left:16px',
+              'right:auto',
               'top:auto',
               'transform:scale(0.72)',
-              'transform-origin:bottom right',
+              'transform-origin:bottom left',
               'z-index:9999',
               'max-width:420px',
               'width:420px',
