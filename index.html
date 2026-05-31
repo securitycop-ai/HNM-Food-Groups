@@ -10,54 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      /* ── Prevent widget from affecting page layout ── */
-      html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-      }
-
-      /* Force every arivu element to be fixed + isolated */
-      #arivu-widget-root,
-      #arivu-widget-container,
-      #arivu-launcher,
-      div[id*="arivu"],
-      div[class*="arivu"] {
-        position: fixed !important;
-        bottom: 16px !important;
-        right: 16px !important;
-        left: auto !important;
-        top: auto !important;
-        width: auto !important;
-        max-width: min(360px, calc(100vw - 32px)) !important;
-        z-index: 9999 !important;
-        box-sizing: border-box !important;
-        transform-origin: bottom right !important;
-      }
-
-      /* Panel (open state) */
-      div[class*="panel"],
-      div[class*="Panel"],
-      div[id*="panel"],
-      div[id*="Panel"] {
-        max-width: min(360px, calc(100vw - 32px)) !important;
-        max-height: calc(100svh - 100px) !important;
-        width: min(360px, calc(100vw - 32px)) !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        right: 0 !important;
-        left: auto !important;
-      }
-
-      /* Scale down on small screens */
-      @media (max-width: 420px) {
-        div[id*="arivu"],
-        div[class*="arivu"] {
-          transform: scale(0.88) !important;
-          transform-origin: bottom right !important;
-          right: 0px !important;
-          bottom: 0px !important;
-        }
-      }
+      html, body { overflow-x: hidden; max-width: 100vw; }
     </style>
   </head>
   <body className="antialiased">
@@ -83,11 +36,52 @@
           "launcherStyle": "pill"
         }
       };
+
+      function constrainWidget() {
+        // Find the widget's outermost container — it's the last fixed div appended to body
+        var allFixed = Array.from(document.querySelectorAll('body > div')).filter(function(el) {
+          var s = window.getComputedStyle(el);
+          return s.position === 'fixed' || el.id.includes('arivu') || (el.className && el.className.includes && el.className.includes('arivu'));
+        });
+        allFixed.forEach(function(el) {
+          // Only target widget divs not our React root
+          if (el.id === 'root') return;
+          var maxH = Math.min(560, window.innerHeight - 80);
+          var maxW = Math.min(340, window.innerWidth - 32);
+          el.style.cssText += [
+            'position:fixed!important',
+            'bottom:16px!important',
+            'right:16px!important',
+            'left:auto!important',
+            'top:auto!important',
+            'max-width:' + maxW + 'px!important',
+            'width:' + maxW + 'px!important',
+            'max-height:' + maxH + 'px!important',
+            'overflow-y:auto!important',
+            'overflow-x:hidden!important',
+            'z-index:9999!important',
+            'box-sizing:border-box!important',
+          ].join(';');
+          // Also constrain all children
+          el.querySelectorAll('*').forEach(function(child) {
+            child.style.maxWidth = '100%';
+            child.style.boxSizing = 'border-box';
+          });
+        });
+      }
+
       var script = document.createElement('script');
       script.src = 'https://api.arivulabs.ai/widget/arivu-widget.js';
       script.async = true;
       script.onload = function () {
-        if (window.ArivuWidget) window.ArivuWidget.init(config);
+        if (window.ArivuWidget) {
+          window.ArivuWidget.init(config);
+          // Run constraint after init and on mutations
+          setTimeout(constrainWidget, 600);
+          setTimeout(constrainWidget, 1500);
+          var observer = new MutationObserver(function() { constrainWidget(); });
+          observer.observe(document.body, { childList: true, subtree: false });
+        }
       };
       document.body.appendChild(script);
     })();
