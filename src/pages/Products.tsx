@@ -1,8 +1,9 @@
-import { Leaf, ShieldCheck, Zap, CheckCircle } from "lucide-react";
+import { Leaf, ShieldCheck, Zap, CheckCircle, MapPin, Star } from "lucide-react";
 
 const Products = () => {
   return (
     <div className="pt-[76px]">
+      {/* Hero */}
       <section className="py-16 sm:py-24 px-4 sm:px-8">
         <div className="max-w-[1240px] mx-auto text-center">
           <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">Our Products</p>
@@ -10,16 +11,22 @@ const Products = () => {
           <p className="text-white/60 text-lg max-w-[560px] mx-auto">
             A new line of naturally sourced, additive-free cereals in development for the UK market. Culturally inspired, family focused, and launching Q4 2026.
           </p>
+          {/* Crafted in Wales badge */}
+          <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-4 py-2 mt-6">
+            <MapPin size={13} className="text-[#f5e3b1]" />
+            <span className="text-[#f5e3b1] text-[12px] font-semibold tracking-[1px]">Crafted in Wales · Cardiff, CF10 3BH</span>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 px-8 border-t border-white/10">
+      <section className="py-16 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-24">
+
+          {/* ── Product 1: Multi Grain Cereal ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-20">
             <div className="relative order-2 lg:order-1 flex items-center justify-center">
               <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative">
                 <img src="/images/hnm-cereal-box-photo.png" alt="HNM Multi Grain Cereal Coming Soon" className="w-full h-auto object-contain blur-sm opacity-55" />
-                {/* Coming Soon overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/55 backdrop-blur-[2px]">
                   <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
                   <p className="font-serif text-3xl text-white font-bold">Q4 2026</p>
@@ -28,54 +35,117 @@ const Products = () => {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 py-1.5 mb-6">
-                <Leaf size={12} className="text-[#f5e3b1]" />
-                <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Flagship Product</span>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 py-1.5">
+                  <Leaf size={11} className="text-[#f5e3b1]" />
+                  <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Flagship Product</span>
+                </div>
+                <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 py-1.5">
+                  <MapPin size={11} className="text-[#f5e3b1]" />
+                  <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Crafted in Wales</span>
+                </div>
               </div>
               <h2 className="font-serif text-4xl text-white mb-4">Multi Grain Cereal</h2>
               <p className="text-white/65 text-[16px] leading-relaxed mb-8">
-                Our hero product, a wholesome breakfast cereal made from premium multi grain blend from organic farms (certification in progress). Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
+                Crafted in Wales from premium multi grain blends sourced from organic farms (certification in progress). Developed using naturally sourced, additive-free ingredients to meet modern nutritional standards while delivering great taste.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {[
-                  "Organic millet (certification pending)",
+                  "Multi grain blend (organic certification pending)",
                   "No artificial additives",
                   "No preservatives (target formulation)",
                   "Plant-based protein (target)",
                   "B vitamins (target formulation)",
-                  "Iron & minerals (target formulation)",
-                  "Naturally multi grain-based (not tested for gluten, may contain traces)",
+                  "Iron and minerals (target formulation)",
+                  "Naturally grain-based (not tested for gluten)",
                   "Family friendly",
                 ].map(f => (
-                  <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13.5px]">
-                    <CheckCircle size={14} className="text-[#f5e3b1] shrink-0" />
+                  <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13px]">
+                    <CheckCircle size={13} className="text-[#f5e3b1] shrink-0" />
                     {f}
                   </div>
                 ))}
               </div>
-              <div className="flex gap-4 flex-wrap">
-                <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-[13px]">UK</p>
-                  <p className="text-white/50 text-[12px]">Market</p>
+              <div className="flex gap-3 flex-wrap">
+                {[["Wales", "Origin"], ["Clean", "Label"], ["Q4 2026", "Available"]].map(([v, l]) => (
+                  <div key={l} className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
+                    <p className="text-[#f5e3b1] font-bold text-[13px]">{v}</p>
+                    <p className="text-white/50 text-[12px]">{l}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 my-16" />
+
+          {/* ── Product 2: Founder's Special ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-20">
+            <div className="order-1 lg:order-1">
+              <div className="flex flex-wrap gap-2 mb-6">
+                <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/20 border border-[#f5e3b1]/30 rounded-full px-3 py-1.5">
+                  <Star size={11} className="text-[#f5e3b1]" />
+                  <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Founder's Special</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-[13px]">Clean</p>
-                  <p className="text-white/50 text-[12px]">Label</p>
+                <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 py-1.5">
+                  <MapPin size={11} className="text-[#f5e3b1]" />
+                  <span className="text-[#f5e3b1] text-[11px] font-semibold tracking-[1px] uppercase">Crafted in Wales</span>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
-                  <p className="text-[#f5e3b1] font-bold text-[13px]">Q4 2026</p>
-                  <p className="text-white/50 text-[12px]">Available</p>
+              </div>
+              <h2 className="font-serif text-4xl text-white mb-4">Founder's Special</h2>
+              <p className="text-white/65 text-[16px] leading-relaxed mb-6">
+                A personally curated blend crafted by Harsh Sanmukh, inspired by his belief that breakfast should be both nourishing and culturally meaningful. This limited edition formulation brings together carefully selected grains and natural ingredients, developed with the same commitment to clean-label quality at the heart of everything HNM stands for.
+              </p>
+              <p className="text-white/50 text-[14px] italic mb-8">
+                "Every spoonful should carry a story, a purpose, and pure goodness." — Harsh Sanmukh, Founder
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {[
+                  "Personally curated by the founder",
+                  "Naturally sourced grains",
+                  "No artificial additives",
+                  "No preservatives (target formulation)",
+                  "Culturally inspired blend",
+                  "Crafted in Wales",
+                  "Clean-label formulation",
+                  "Limited edition",
+                ].map(f => (
+                  <div key={f} className="flex items-center gap-2.5 text-white/70 text-[13px]">
+                    <CheckCircle size={13} className="text-[#f5e3b1] shrink-0" />
+                    {f}
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-3 flex-wrap">
+                {[["Wales", "Origin"], ["Limited", "Edition"], ["Q4 2026", "Available"]].map(([v, l]) => (
+                  <div key={l} className="bg-white/5 border border-white/10 rounded-lg px-5 py-3 text-center">
+                    <p className="text-[#f5e3b1] font-bold text-[13px]">{v}</p>
+                    <p className="text-white/50 text-[12px]">{l}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative order-2 lg:order-2 flex items-center justify-center">
+              <div className="w-full max-w-md rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl relative">
+                <img src="/images/hnm-cereal-box.svg" alt="HNM Founder's Special Coming Soon" className="w-full h-auto object-contain p-6 blur-sm opacity-50" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/55 backdrop-blur-[2px]">
+                  <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
+                  <p className="font-serif text-3xl text-white font-bold">Q4 2026</p>
+                  <p className="text-white/50 text-[13px] mt-2">Founder's Limited Edition</p>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Nutritional Highlights */}
           <div className="border-t border-white/10 pt-16">
-            <h3 className="font-serif text-3xl text-white text-center mb-12">Nutritional Highlights</h3>
+            <h3 className="font-serif text-3xl text-white text-center mb-3">Nutritional Highlights</h3>
+            <p className="text-white/45 text-center text-[13px] mb-12">(Target formulation — subject to final testing and verification)</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: Zap, title: "Plant-Based Protein", desc: "Our formulation is designed to include a meaningful source of plant-based protein to support a nutritious start to the day." },
-                { icon: Leaf, title: "Natural Ingredients", desc: "Formulated with naturally sourced ingredients; organic certification in progress. No fillers, no artificial colours, no synthetic preservatives just real food." },
+                { icon: Leaf, title: "Natural Ingredients", desc: "Formulated with naturally sourced ingredients; organic certification in progress. No fillers, no artificial colours, no synthetic preservatives." },
                 { icon: ShieldCheck, title: "Compliance in Progress", desc: "Our formulations are being developed in line with UK and EU food safety standards. Full compliance documentation expected Q4 2026." },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-7 hover:border-[#f5e3b1]/30 transition-colors">
@@ -89,16 +159,22 @@ const Products = () => {
             </div>
           </div>
 
+          {/* CTA */}
           <div className="mt-16 bg-[#f5e3b1]/5 border border-[#f5e3b1]/15 rounded-2xl px-8 py-12 text-center">
+            <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-4 py-2 mb-5">
+              <MapPin size={13} className="text-[#f5e3b1]" />
+              <span className="text-[#f5e3b1] text-[12px] font-semibold tracking-[1px]">Crafted in Wales · Cardiff, UK</span>
+            </div>
             <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-3">Coming Soon</p>
             <h3 className="font-serif text-3xl text-white mb-4">Available in Retail: Expected Q4 2026</h3>
             <p className="text-white/60 max-w-[500px] mx-auto text-[15px]">
-              Our products are currently in development and will be available in retail and airline catering segments from Q4 2026. Register your interest by contacting us directly.
+              Both our Multi Grain Cereal and Founder's Special are currently in development and will be available in retail and airline catering segments from Q4 2026. Register your interest below.
             </p>
             <a href="mailto:harsh@hnmfoodgroup.com" className="inline-flex items-center gap-2 mt-6 bg-[#f5e3b1] text-[#1a0800] px-6 py-3 rounded font-bold text-[12px] tracking-[0.8px] uppercase hover:bg-white transition-colors shadow-lg">
               Register Interest
             </a>
           </div>
+
         </div>
       </section>
     </div>

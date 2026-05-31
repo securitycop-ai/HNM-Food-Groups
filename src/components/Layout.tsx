@@ -168,7 +168,7 @@ const Footer = () => {
             <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_products")}</h5>
             <ul className="space-y-3">
               <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Multi Grain Cereal</Link></li>
-              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Breakfast Range</Link></li>
+              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Founder's Special</Link></li>
             </ul>
           </div>
 
