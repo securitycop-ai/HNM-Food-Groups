@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
 
-export type Lang = "en" | "cy" | "hi" | "ta";
+export type Lang = "en" | "cy" | "hi" | "ta" | "gu";
 
 export const languages: { code: Lang; label: string; flag: string; nativeLabel: string }[] = [
-  { code: "en", label: "English",  flag: "🇬🇧", nativeLabel: "English"  },
-  { code: "cy", label: "Welsh",    flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿", nativeLabel: "Cymraeg"  },
-  { code: "hi", label: "Hindi",    flag: "🇮🇳", nativeLabel: "हिंदी"    },
-  { code: "ta", label: "Tamil",    flag: "🇮🇳", nativeLabel: "தமிழ்"    },
+  { code: "en", label: "English",   flag: "🇬🇧", nativeLabel: "English"    },
+  { code: "cy", label: "Welsh",     flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿", nativeLabel: "Cymraeg"    },
+  { code: "hi", label: "Hindi",     flag: "🇮🇳", nativeLabel: "हिंदी"      },
+  { code: "ta", label: "Tamil",     flag: "🇮🇳", nativeLabel: "தமிழ்"      },
+  { code: "gu", label: "Gujarati",  flag: "🇮🇳", nativeLabel: "ગુજરાતી"    },
 ];
 
 const translations: Record<Lang, Record<string, string>> = {
@@ -169,6 +170,46 @@ const translations: Record<Lang, Record<string, string>> = {
     follow_us: "எங்களை பின்தொடரவும்",
     contact_title: "தொடர்பு கொள்ளுங்கள்",
     contact_sub: "சில்லறை கூட்டாண்மைகள், தயாரிப்பு விசாரணைகள் அல்லது விமான சேவையில் ஆர்வம் இருந்தாலும், நாங்கள் உங்களிடமிருந்து கேட்க விரும்புகிறோம்.",
+  },
+  gu: {
+    nav_home: "હોમ",
+    nav_products: "ઉત્પાદનો",
+    nav_whyus: "અમને શા માટે પસંદ કરો",
+    nav_about: "અમારા વિશે",
+    nav_blog: "બ્લોગ",
+    nav_media: "મીડિયા",
+    nav_contact: "સંપર્ક",
+    hero_badge: "ક્લીન લેબલ · કુદરતી સ્ત્રોત · વેલ્સમાં બનાવ્યું",
+    hero_title1: "શુદ્ધ સારપ",
+    hero_title2: "સૌ માટે",
+    hero_sub: "વેલ્સમાં બનાવ્યું, કુદરતી રીતે મેળવ્યું, ઉમેરણ મુક્ત નાસ્તાના અનાજ, આધુનિક પોષણ ધોરણો માટે ઘડ્યું અને વૈશ્વિક રાંધણ પ્રણાલીઓથી પ્રેરિત.",
+    hero_cta1: "ઉત્પાદનો જુઓ",
+    hero_cta2: "અમારી વાર્તા",
+    why_label: "HNM શા માટે",
+    why_heading: "ઘટકો જેના પર તમે વિશ્વાસ કરી શકો",
+    feat1_title: "કુદરતી ઘટકો",
+    feat1_desc: "દરેક ઘટક કૃત્રિમ ઉમેરણો કે પ્રિઝર્વેટિવ વિના કુદરતી રીતે મેળવ્યો છે.",
+    feat2_title: "કોઈ પ્રિઝર્વેટિવ નહીં",
+    feat2_desc: "કૃત્રિમ રસાયણો અને કૃત્રિમ સ્વાદથી મુક્ત સ્વચ્છ ફોર્મ્યુલેશન.",
+    feat3_title: "પ્રોટીનનો સારો સ્ત્રોત",
+    feat3_desc: "પૌષ્ટિક સવારને સહાય કરવા છોડ-આધારિત પ્રોટીન સાથે ઘડ્યું.",
+    feat4_title: "પરિવારલક્ષી",
+    feat4_desc: "કાર્ડિફ, વેલ્સમાં કાળજીપૂર્વક ઘડ્યું, સમગ્ર પરિવાર માટે ઉત્પાદનો.",
+    product_label: "અમારું મુખ્ય ઉત્પાદન",
+    product_heading: "મલ્ટી ગ્રેઈન સિરિયલ",
+    product_desc: "વેલ્સમાં બનાવ્યું, ઓર્ગેનિક ખેતરોમાંથી (પ્રમાણપત્ર પ્રગતિ પર) પ્રીમિયમ મલ્ટી ગ્રેઈન મિશ્રણ સાથે, અમારો સિરિયલ મજબૂત પોષણ મૂલ્ય આપવા ઘડ્યો છે. કૃત્રિમ ઉમેરણ મુક્ત.",
+    product_view: "સંપૂર્ણ શ્રેણી જુઓ",
+    cta_heading: "સ્વચ્છ પોષણ અનુભવવા તૈયાર છો?",
+    cta_sub: "અમારા ઉત્પાદનો, છૂટક ભાગીદારી, અથવા કેટરિંગ વિચારણા વિશે જાણવા સંપર્ક કરો.",
+    cta_btn: "સંપર્ક કરો",
+    footer_tagline: "વેલ્સમાં ઘડ્યું, આધુનિક પોષણ ધોરણો માટે કુદરતી સ્ત્રોત નાસ્તાના અનાજ.",
+    footer_products: "ઉત્પાદનો",
+    footer_company: "કંપની",
+    footer_contact: "સંપર્ક",
+    footer_copyright: "© 2026 HNM ફૂડ ગ્રૂપ લિ. સર્વ અધિકાર સુરક્ષિત. વેલ્સમાં બનાવ્યું.",
+    follow_us: "અમને અનુસરો",
+    contact_title: "સંપર્ક કરો",
+    contact_sub: "છૂટક ભાગીદારી, ઉત્પાદન વિચારણા, અથવા વિમાન સેવામાં રુચિ હોય, અમે તમારી પાસેથી સાંભળવા ઇચ્છીએ છીએ.",
   },
 };
 
