@@ -1,123 +1,242 @@
 import { Link } from "react-router-dom";
-import { Leaf, ShieldCheck, Zap, Heart, ArrowRight } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useEffect, useRef, useState } from "react";
+
+function useCountdown(target: Date) {
+  const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0, done: false });
+  useEffect(() => {
+    function tick() {
+      const diff = target.getTime() - Date.now();
+      if (diff <= 0) { setTime({ d: 0, h: 0, m: 0, s: 0, done: true }); return; }
+      setTime({
+        d: Math.floor(diff / 86400000),
+        h: Math.floor((diff % 86400000) / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000),
+        done: false,
+      });
+    }
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [target]);
+  return time;
+}
+
+const REVEAL = new Date("2026-11-05T00:00:00+00:00");
+
+const pad = (n: number) => String(n).padStart(2, "0");
 
 const Home = () => {
-  const { t } = useLanguage();
+  const t = useCountdown(REVEAL);
 
   return (
-    <div>
+    <div className="page-enter">
       {/* ── Hero ── */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="/hnm-brand-video.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-[#1a0800]/70" />
-        </div>
-        <div className="max-w-[1240px] mx-auto text-center z-10 pt-[76px] px-4">
-          <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8">
-            <Leaf size={12} className="text-[#f5e3b1] shrink-0" />
-            <span className="text-[#f5e3b1] text-[10px] sm:text-[12px] font-semibold tracking-[1px] sm:tracking-[1.5px] uppercase">{t("hero_badge")}</span>
-          </div>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
-            {t("hero_title1")}<br />
-            <span className="text-[#f5e3b1]">{t("hero_title2")}</span>
-          </h1>
-          <p className="text-[#f5e3b1]/80 text-sm font-semibold tracking-widest uppercase mb-3">
-            Gyda Gofal &mdash; Welsh for &ldquo;With Care&rdquo;
-          </p>
-          <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-[560px] mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-            {t("hero_sub")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Link to="/products" className="inline-flex items-center justify-center gap-2 bg-[#f5e3b1] text-[#1a0800] px-6 sm:px-8 py-3.5 sm:py-4 rounded font-bold text-[12px] sm:text-[13px] tracking-[0.8px] uppercase hover:bg-white transition-colors shadow-lg">
-              {t("hero_cta1")} <ArrowRight size={15} />
-            </Link>
-            <Link to="/about" className="inline-flex items-center justify-center gap-2 border border-[#f5e3b1]/40 text-[#f5e3b1] px-6 sm:px-8 py-3.5 sm:py-4 rounded font-bold text-[12px] sm:text-[13px] tracking-[0.8px] uppercase hover:border-[#f5e3b1] transition-colors">
-              {t("hero_cta2")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Value Props ── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
-            <p className="text-[#f5e3b1] text-[10px] sm:text-[11px] font-bold tracking-[2.5px] uppercase mb-3">{t("why_label")}</p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-white">{t("why_heading")}</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { icon: Leaf,        tk: "feat1" },
-              { icon: ShieldCheck, tk: "feat2" },
-              { icon: Zap,         tk: "feat3" },
-              { icon: Heart,       tk: "feat4" },
-            ].map(({ icon: Icon, tk }) => (
-              <div key={tk} className="bg-white/5 border border-white/10 rounded-xl p-5 sm:p-7 hover:border-[#f5e3b1]/30 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-[#f5e3b1]/10 flex items-center justify-center mb-4 sm:mb-5">
-                  <Icon size={20} className="text-[#f5e3b1]" />
-                </div>
-                <h3 className="font-sans font-bold text-white text-[14px] sm:text-[15px] mb-2">{t(`${tk}_title`)}</h3>
-                <p className="text-white/55 text-[13px] sm:text-[13.5px] leading-relaxed">{t(`${tk}_desc`)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Flagship Product ── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            {/* Product image */}
-            <div className="relative flex items-center justify-center order-1 lg:order-1">
-              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/images/gyda-gofal-pack-front.jpg"
-                  alt="Gyda Gofal by HNM Food Group - 315g powdered breakfast blend"
-                  className="w-full h-auto object-contain"
-                />
-              </div>
+      <div className="hero-full">
+        <img
+          className="hf-img"
+          src="/hero-bowl.jpg"
+          alt="A bowl of HNM powdered breakfast blend with dates, millets and pulses"
+          width="1770"
+          height="1245"
+        />
+        <div className="wrap hf-inner">
+          <div className="hf-copy">
+            <span className="status on-dark">Ready · Name revealed 5 November · Wales, UK</span>
+            <h1>
+              <span>Rooted in Tradition.</span>
+              <em>Made for Modern Mornings.</em>
+            </h1>
+            <p className="hf-lede">
+              Generations of South Indian food wisdom, reimagined in Wales as one simple powdered breakfast. Add, stir, enjoy.
+            </p>
+            <div className="actions">
+              <Link to="/pre-order" className="btn gold">Register to Pre-order</Link>
+              <Link to="/our-product" className="btn ghost on-dark">Explore the Blend</Link>
             </div>
-            {/* Text */}
-            <div className="order-2 lg:order-2">
-              <p className="text-[#f5e3b1] text-[10px] sm:text-[11px] font-bold tracking-[2.5px] uppercase mb-3 sm:mb-4">{t("product_label")}</p>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">{t("product_heading")}</h2>
-              <p className="text-white/65 text-[15px] sm:text-[16px] leading-relaxed mb-5 sm:mb-6">{t("product_desc")}</p>
-              <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
-                {[
-                  "Grains, millets, pulses, legumes, rice and dates",
-                  "No artificial colours or preservatives",
-                  "No refined sugar",
-                  "No synthetic fortification",
-                  "No nuts",
-                  "Add 21g to 200ml hot milk or water, stir and enjoy",
-                ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-white/70 text-[13px] sm:text-[14px]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#f5e3b1] shrink-0" />{item}
-                  </li>
-                ))}
-              </ul>
-              <Link to="/products" className="inline-flex items-center gap-2 text-[#f5e3b1] font-semibold text-[12px] sm:text-[13px] tracking-[0.5px] uppercase hover:gap-3 transition-all">
-                {t("product_view")} <ArrowRight size={15} />
-              </Link>
+          </div>
+
+          <aside className="hf-count" aria-label="Product name reveal">
+            <span className="rc-k">The name is revealed</span>
+            <p className="rc-date">5 November</p>
+            {t.done ? (
+              <p style={{ color: "#F6EBD4", fontFamily: "var(--display)", fontSize: "1.25rem", fontStyle: "italic" }}>
+                The name has been revealed!
+              </p>
+            ) : (
+              <div className="countdown" role="timer" aria-label="Time until the product name reveal">
+                <div><b>{pad(t.d)}</b><span>Days</span></div>
+                <div><b>{pad(t.h)}</b><span>Hours</span></div>
+                <div><b>{pad(t.m)}</b><span>Mins</span></div>
+                <div><b>{pad(t.s)}</b><span>Secs</span></div>
+              </div>
+            )}
+            <p className="rc-foot">Recipe finished. Pack finalised. Arriving Q4 2026.</p>
+          </aside>
+        </div>
+      </div>
+
+      {/* ── Why HNM ── */}
+      <div className="wrap block">
+        <div className="split">
+          <div className="stack">
+            <span className="eyebrow">Why HNM?</span>
+            <h2>Some food traditions deserve a place in modern life.</h2>
+          </div>
+          <div className="prose">
+            <p>Not every good idea needs to begin with something new.</p>
+            <p>Sometimes, it begins with the food we grew up eating, the ingredients our families trusted and the knowledge passed down through generations.</p>
+            <p>At HNM, we believe those traditions still have a place in today's kitchens. Our approach combines traditional ingredient diversity with modern food development, creating a breakfast concept designed around today's routines without losing sight of where it began.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── One Blend ── */}
+      <div className="wrap block">
+        <div className="split">
+          <div className="stack">
+            <span className="eyebrow">Introducing our first product</span>
+            <h2>One Blend. Many Ingredients. A Simpler Morning.</h2>
+            <p className="muted" style={{ fontWeight: 600 }}>HNM Powdered Breakfast Blend · 315g</p>
+          </div>
+          <div className="prose">
+            <p>A thoughtfully developed combination of grains and millets, pulses and legumes, rice, seeds and dates.</p>
+            <p>Each ingredient brings its own character, carefully balanced so they work together in one convenient breakfast blend.</p>
+            <p>Designed for busy mornings, whether you're preparing breakfast at home, getting ready for work or looking for something simple during your day.</p>
+            <p className="note">Recipe finished. Pack finalised. Name revealed 5 November.</p>
+            <div className="actions">
+              <Link to="/our-product" className="btn ghost">Discover the Product</Link>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* ── CTA ── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
-        <div className="max-w-[1240px] mx-auto text-center">
-          <h2 className="font-serif text-3xl sm:text-4xl text-white mb-4 sm:mb-6">{t("cta_heading")}</h2>
-          <p className="text-white/60 text-base sm:text-lg max-w-[480px] mx-auto mb-8 sm:mb-10 px-4">{t("cta_sub")}</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-[#f5e3b1] text-[#1a0800] px-8 sm:px-10 py-3.5 sm:py-4 rounded font-bold text-[12px] sm:text-[13px] tracking-[0.8px] uppercase hover:bg-white transition-colors shadow-lg">
-            {t("cta_btn")} <ArrowRight size={16} />
-          </Link>
+      {/* ── Ritual ── */}
+      <div className="wrap block">
+        <div className="stack" style={{ marginBottom: "2rem" }}>
+          <span className="eyebrow">Breakfast made simple</span>
+          <h2>Less Preparation. More Time for Your Morning.</h2>
+          <p className="lede">You shouldn't need a complicated routine to prepare breakfast. Our powdered breakfast blend is designed around three simple steps.</p>
         </div>
-      </section>
+        <ol className="ritual">
+          <li><span className="n">01</span><span className="verb">Add</span><p>Add hot water or hot milk to the breakfast blend.</p></li>
+          <li><span className="n">02</span><span className="verb">Stir</span><p>Mix until combined.</p></li>
+          <li><span className="n">03</span><span className="verb">Enjoy</span><p>A traditionally inspired breakfast, prepared for modern life.</p></li>
+        </ol>
+        <p className="muted" style={{ marginTop: "1.5rem", maxWidth: "38rem" }}>Whether you're at home, in the office or travelling, the idea is simple: make breakfast easier to fit into your day.</p>
+      </div>
+
+      {/* ── Pillars ── */}
+      <div className="wrap block">
+        <span className="eyebrow">What makes us different</span>
+        <h2 style={{ marginTop: ".75rem" }}>Thoughtful Ingredients. Thoughtful Development.</h2>
+        <div className="pillars">
+          <div>
+            <h3>Rooted in Tradition</h3>
+            <p>Inspired by traditional South Indian food knowledge and the ingredients used in family kitchens across generations.</p>
+          </div>
+          <div>
+            <h3>Ingredient Diversity</h3>
+            <p>Bringing together different grains, millets, pulses, legumes, rice and seeds within one carefully developed formulation.</p>
+          </div>
+          <div>
+            <h3>Developed with Purpose</h3>
+            <p>Combining founder-led research with specialist food-development support to refine the formulation, processing and final product.</p>
+          </div>
+          <div>
+            <h3>Made for Modern Routines</h3>
+            <p>A convenient powdered format designed to reduce preparation time without losing its connection to traditional food.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Founder Story ── */}
+      <div className="wrap block">
+        <div className="split">
+          <div className="stack">
+            <span className="eyebrow">Our founder's story</span>
+            <h2>From My Grandmother's Kitchen in Chennai to Building a Food Company in Wales.</h2>
+          </div>
+          <div className="prose">
+            <p>I grew up in Chennai, where food was always more than something we ate. It was part of our family, our daily routine and the knowledge shared between generations.</p>
+            <p>Some of my earliest memories are of watching my mother and grandmother prepare food using different grains, pulses and traditional ingredients.</p>
+            <p>Years later, after moving to the UK in 2023, I began working in a supermarket. While working on the shop floor, I found myself reading the ingredients on breakfast products and asking a simple question: could the food knowledge I grew up with become something useful for the way people live today?</p>
+            <p>What started as curiosity became research, recipe development and eventually HNM Food Group.</p>
+            <p className="sig"><b>Harsh Sanmukh</b><br />Founder, HNM Food Group Ltd</p>
+            <div className="actions">
+              <Link to="/our-story" className="btn ghost">Read Our Full Story</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Development Journey ── */}
+      <div className="wrap block">
+        <div className="split">
+          <div className="stack">
+            <span className="eyebrow">Our development journey</span>
+            <h2>Tradition Is Our Starting Point. Development Takes Us Forward.</h2>
+          </div>
+          <div className="prose">
+            <p>Building a food product takes more than a good recipe.</p>
+            <p>Our first breakfast blend went through a structured development journey: formulation refinement, ingredient assessment, processing trials and sensory evaluation.</p>
+            <p>We worked with specialist food-industry expertise, including Cardiff Metropolitan University's ZERO2FIVE Food Industry Centre, to get every detail right. Now it's ready.</p>
+          </div>
+        </div>
+        <ul className="flow" aria-label="Development stages">
+          <li>Research</li>
+          <li>Formulation</li>
+          <li>Testing</li>
+          <li>Reveal · 5 Nov</li>
+          <li>Launch</li>
+        </ul>
+        <div className="actions" style={{ marginTop: "1.5rem" }}>
+          <Link to="/our-journey" className="btn ghost">Follow Our Journey</Link>
+        </div>
+      </div>
+
+      {/* ── Places ── */}
+      <div className="wrap block">
+        <span className="eyebrow">Built in Wales, inspired by India</span>
+        <h2 style={{ marginTop: ".75rem" }}>Two Places. One Purpose.</h2>
+        <div className="places-grid" aria-label="From Chennai to Cardiff">
+          <div className="place">
+            <b>Chennai</b>
+            <span>13.08° N · 80.27° E</span>
+            <span>Where the inspiration began</span>
+          </div>
+          <div className="arc" aria-hidden="true" />
+          <div className="place right">
+            <b>Cardiff</b>
+            <span>51.48° N · 3.18° W</span>
+            <span>Where the company is being built</span>
+          </div>
+        </div>
+        <div className="prose" style={{ marginTop: "2rem" }}>
+          <p>Our story began with food traditions in Chennai and continues with the development of our business in Wales. India provides the inspiration. Wales is where we're building the company, developing our first product and preparing for the UK market.</p>
+          <p>We want to build a food business that respects its origins while embracing the opportunities of modern food innovation.</p>
+        </div>
+      </div>
+
+      {/* ── Dark CTA Band ── */}
+      <div className="band">
+        <div className="wrap block">
+          <div className="split">
+            <div className="stack">
+              <span className="eyebrow">Be part of our journey</span>
+              <h2>Something Good Is Almost Here.</h2>
+            </div>
+            <div className="stack">
+              <p className="lede">Our first powdered breakfast blend is ready, and its name arrives on 5 November. Whether you're a future customer, independent retailer, distributor or potential collaborator, we'd love to hear from you.</p>
+              <div className="actions">
+                <Link to="/contact" className="btn">Get in Touch</Link>
+                <Link to="/our-journey" className="btn ghost">Follow Our Progress</Link>
+              </div>
+              <p className="muted" style={{ fontSize: ".85rem" }}>Pre-orders open soon. Register now to be first in line.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

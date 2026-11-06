@@ -1,17 +1,18 @@
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
-import WhyUs from "./pages/WhyUs";
-import About from "./pages/About";
+import OurProduct from "./pages/OurProduct";
+import WhyHNM from "./pages/WhyHNM";
+import OurStory from "./pages/OurStory";
+import OurJourney from "./pages/OurJourney";
+import PreOrder from "./pages/PreOrder";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import Media from "./pages/Media";
+import FoundersLetter from "./pages/FoundersLetter";
+import RespectToMum from "./pages/RespectToMum";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,13 +26,21 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/why-us" element={<WhyUs />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/our-product" element={<OurProduct />} />
+            <Route path="/why-hnm" element={<WhyHNM />} />
+            <Route path="/our-story" element={<OurStory />} />
+            <Route path="/our-story/founders-letter" element={<FoundersLetter />} />
+            <Route path="/our-story/respect-to-mum" element={<RespectToMum />} />
+            <Route path="/our-journey" element={<OurJourney />} />
+            <Route path="/pre-order" element={<PreOrder />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+            {/* Redirects from old URLs */}
+            <Route path="/products" element={<Navigate to="/our-product" replace />} />
+            <Route path="/why-us" element={<Navigate to="/why-hnm" replace />} />
+            <Route path="/about" element={<Navigate to="/our-story" replace />} />
+            <Route path="/blog" element={<Navigate to="/our-journey" replace />} />
+            <Route path="/blog/:slug" element={<Navigate to="/our-journey" replace />} />
+            <Route path="/media" element={<Navigate to="/our-journey" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

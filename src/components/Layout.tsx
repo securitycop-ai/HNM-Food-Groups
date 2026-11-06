@@ -1,240 +1,153 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Mail, MapPin, Linkedin, Instagram, Twitter, Facebook, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useLanguage, languages } from "@/context/LanguageContext";
-import LegalModal, { type LegalPage } from "./LegalModal";
-// CookieBanner removed: no tracking used on this site
+
+const HNMLogo = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 1080 1038.21" aria-hidden="true" className={className}>
+    <path fill="currentColor" d="M290.38534,345.15026c23.05194-15.75094,42.11234-12.0066,58.21279,6.18638,0,0,28.47608-39.48076-18.27006-75.95081C278.74613,298.35592,290.38534,345.15026,290.38534,345.15026Z"/>
+    <path fill="currentColor" d="M751.0159,443.89711c-7.55,64.01173-13.6878,141.494-19.47233,205.75-.32605,5.51318-1.57522,13.742-2.2,19.28237l-9.26085,75.20087-.08139.65177a21.24411,21.24411,0,0,1-39.135,8.5819L583.26008,595.73831,572.424,773.84137a29.23227,29.23227,0,1,1-58.14549-5.7033c.10858-.65177,32.37245-239.50756,32.481-240.13215a20.341,20.341,0,0,1,37.36962-8.12025l98.12233,155.80618c.81472-11.94964,1.49367-21.56356,1.6838-24.49669,1.76534-59.36763,3.99216-133.91673,6.76234-193.28437l.5432-9.6411.67895-10.02136a29.69345,29.69345,0,1,1,59.09612,5.64878Z"/>
+    <path fill="currentColor" d="M759.95925,319.92868a338.89154,338.89154,0,0,1-27.6038,27.00664c-58.09308,51.31736-124.46405,94.11761-194.10376,127.94743q-18.53786,8.98236-37.47994,17.12962l-62.86457,513.10187a22.68624,22.68624,0,0,1-45.067-5.24867l53.75145-486.52465h-.02446c-5.17688,1.86081-10.40152,3.674-15.62616,5.43942-15.24522,5.15329-30.60927,10.47345-46.23543,14.17133q-24.76548,5.869-49.52864,11.71408c-20.58868,4.86686-41.10631,9.16117-62.02933,12.28649q-41.72721,6.22676-83.90641,8.63638-24.29894,1.28847-48.57341,1.31227c2.50457,1.59841,5.01029,3.17294,7.49156,4.843,30.58481,19.94478,57.87758,45.47226,78.77613,75.53272l6.70408,10.11553c4.27058,6.58467,8.37457,13.95654,12.21529,20.73211,4.867,8.92266,9.63849,17.79756,14.21894,26.79186L272.289,571.0043c16.07931-1.88468,32.875-4.24654,46.402-6.56079-16.41363,113.25132-33.08937,229.771-33.08937,229.771-3.7219,20.99451-34.11683,17.86919-33.06608-3.841.83408-11.14139-4.03293-25.09807-8.42233-35.97706-9.543-22.927-22.97443-45.73466-36.2393-67.25411a233.06411,233.06411,0,0,0-18.46622-25.74212c-4.19835-5.36792-9.30416-10.75973-13.93236-15.67435-19.80121-20.08792-43.53982-36.40647-68.39908-49.6712-25.4557-13.718-52.964-25.432-80.73319-37.55158a22.62979,22.62979,0,0,1,11.99978-43.182,843.26607,843.26607,0,0,0,239.2663-8.89878l11.90542-134.699A28.37636,28.37636,0,1,1,345.865,378.284s-10.11495,69.80673-16.98561,117.307a867.80207,867.80207,0,0,0,124.10526-40.27136l26.9829-244.22855c5.39238-35.97706,57.33006-30.32286,54.44341,6.346l-26.0766,212.90373q15.20912-7.515,30.10836-15.65048,10.19942-5.5468,20.27882-11.33228c56.78023-32.54143,111.58127-70.66571,156.00293-119.144,40.892-44.61329,54.801-122.69877,54.27567-181.41188,0,1.40765-133.9348,39.81806-153.2118,190.97873,29.011-18.06009,73.40938-63.55624,94.40345-90.51511C678.844,257.39829,642.3181,318.18714,560.86849,368.8603c1.2884-.83509,5.65449-47.90577,6.05988-52.00917,1.74155-17.55919,3.86519-35.11822,7.014-52.48636,6.03658-33.47205,15.7939-66.5623,32.804-96.21708,22.6168-39.34088,57.019-70.85661,94.8333-95.93079,37.83757-25.05031,112.12995-59.04715,112.12995-59.04715C837.35263,111.08075,829.76554,242.65442,759.95925,319.92868Z"/>
+    <path fill="currentColor" d="M1056.65344,641.01086a26.92955,26.92955,0,0,1-53.82743-1.84673c.27168-.05437,6.70814-106.62285,12.004-194.425L935.39249,607.715a18.26667,18.26667,0,0,1-32.88862-.08139l-58.906-120.90805-8.47332,224.4892c-2.96014,37.07075-56.19018,34.46367-55.26673-2.96031.05437-.81471,21.83508-314.08384,21.88945-314.817a22.56176,22.56176,0,0,1,43.18149-7.49567L919.179,555.29981l104.83032-232.90815c10.456-22.43264,43.77905-14.58391,43.23586,10.02135C1067.65245,332.52175,1056.35474,640.685,1056.65344,641.01086Z"/>
+    <path fill="currentColor" d="M481.83141,912.90845l0-.00008a29.71884,29.71884,0,0,1,17.95723-22.62422c170.56685-70.24051,350.36677-123.41454,537.08841-163.79456a15.63925,15.63925,0,0,1,18.91811,15.30086v0a15.65655,15.65655,0,0,1-11.44139,15.06433c-185.367,51.88048-354.97635,102.58765-519.486,187.38533C503.08075,955.47044,477.81039,937.08749,481.83141,912.90845Z"/>
+  </svg>
+);
+
+const navLinks = [
+  { name: "Home",        path: "/" },
+  { name: "Our Product", path: "/our-product" },
+  { name: "Why HNM",    path: "/why-hnm" },
+  { name: "Our Story",  path: "/our-story" },
+  { name: "Our Journey",path: "/our-journey" },
+  { name: "Pre-order",  path: "/pre-order" },
+  { name: "Contact",    path: "/contact" },
+];
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const { lang, setLang, t } = useLanguage();
-  const current = languages.find((l) => l.code === lang)!;
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: t("nav_home"),     path: "/" },
-    { name: t("nav_products"), path: "/products" },
-    { name: t("nav_whyus"),    path: "/why-us" },
-    { name: t("nav_about"),    path: "/about" },
-    { name: t("nav_blog"),     path: "/blog" },
-    { name: t("nav_media"),    path: "/media" },
-    { name: t("nav_contact"),  path: "/contact" },
-  ];
-
-  const closeMenu = () => setIsMobileMenuOpen(false);
+  useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
   return (
-    <>
-      <header className={cn(
-        "fixed top-0 left-0 right-0 z-[200] w-full transition-all duration-300 border-b",
-        isScrolled
-          ? "bg-[#1a0800]/95 backdrop-blur-md border-[#5a3010]/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-0"
-          : "bg-transparent border-transparent py-2"
-      )}>
-        <div className="max-w-[1240px] mx-auto px-6 h-[76px] flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center flex-shrink-0" onClick={closeMenu}>
-            <img src="/hnm-logo.svg" alt="HNM Food Groups" className="h-12 w-auto" />
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center flex-1 justify-center">
-            {navLinks.map((link) => (
-              <Link key={link.path} to={link.path}
-                className={cn("px-3 py-2 text-[12px] font-semibold tracking-[0.6px] uppercase transition-colors whitespace-nowrap rounded",
-                  location.pathname === link.path ? "text-[#f5e3b1]" : "text-white/80 hover:text-[#f5e3b1]"
-                )}>
-                {link.name}
-              </Link>
+    <header className="site" style={{ position: "sticky", top: 0, zIndex: 20 }}>
+      <div className="wrap bar">
+        <Link to="/" className="brand" aria-label="HNM Food Group, home">
+          <HNMLogo style={{ width: 52, height: 50 }} />
+          <small>Food Group</small>
+        </Link>
+        <nav className={`main${menuOpen ? " open" : ""}`} id="nav" aria-label="Main">
+          <ul>
+            {navLinks.map(l => (
+              <li key={l.path}>
+                <Link to={l.path} aria-current={location.pathname === l.path ? "page" : undefined}>
+                  {l.name}
+                </Link>
+              </li>
             ))}
-          </nav>
+          </ul>
+        </nav>
+        <Link to="/pre-order" className="btn head-cta" style={{ display: menuOpen ? "none" : undefined }}>
+          Register to Pre-order
+        </Link>
+        <button
+          className="menu-btn"
+          aria-expanded={menuOpen}
+          aria-controls="nav"
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+      </div>
+    </header>
+  );
+};
 
-          {/* Language Switcher */}
-          <div className="hidden xl:block relative flex-shrink-0">
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 bg-white/5 border border-white/10 hover:border-[#f5e3b1]/30 rounded-lg px-3 py-2 text-[13px] text-white/80 transition-colors"
-            >
-              <span className="text-[16px]">{current.flag}</span>
-              <span className="font-semibold text-[11px] tracking-wide">{current.nativeLabel}</span>
-              <ChevronDown size={12} className={cn("transition-transform", langOpen && "rotate-180")} />
-            </button>
-            {langOpen && (
-              <div className="absolute right-0 top-full mt-2 bg-[#1a0800] border border-[#f5e3b1]/15 rounded-xl shadow-2xl overflow-hidden z-[300] min-w-[140px]">
-                {languages.map((l) => (
-                  <button key={l.code} onClick={() => { setLang(l.code); setLangOpen(false); }}
-                    className={cn("w-full flex items-center gap-3 px-4 py-3 text-[13px] hover:bg-white/5 transition-colors text-left",
-                      lang === l.code ? "text-[#f5e3b1] bg-white/5" : "text-white/70"
-                    )}>
-                    <span className="text-[18px]">{l.flag}</span>
-                    <span className="font-semibold">{l.nativeLabel}</span>
-                  </button>
-                ))}
-              </div>
-            )}
+const Footer = () => (
+  <footer className="site" style={{
+    background: "radial-gradient(120% 140% at 100% 0%, #3B2414 0%, #24150A 55%)",
+    boxShadow: "inset 0 1px 0 rgba(196,154,74,.5)",
+    color: "#F3E6C8",
+    paddingBlock: "3.5rem 2.5rem",
+    fontSize: ".9rem",
+  }}>
+    <div className="wrap">
+      <div className="foot">
+        <div>
+          <Link to="/" style={{ color: "#F3E6C8", display: "inline-block", marginBottom: "1rem" }}>
+            <HNMLogo style={{ width: 52, height: 50, color: "#F3E6C8" }} />
+          </Link>
+          <div className="tag" style={{ fontFamily: "var(--display)", fontStyle: "italic", fontSize: "1.35rem", color: "#F3E6C8", marginBottom: ".75rem" }}>
+            Gyda Gofal
           </div>
-
-          {/* Mobile toggle */}
-          <button className="xl:hidden flex flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer ml-auto"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
-            <span className={cn("w-[22px] h-[1.5px] bg-white transition-all", isMobileMenuOpen && "transform rotate-45 translate-y-[6.5px]")}></span>
-            <span className={cn("w-[22px] h-[1.5px] bg-white transition-all", isMobileMenuOpen && "opacity-0")}></span>
-            <span className={cn("w-[22px] h-[1.5px] bg-white transition-all", isMobileMenuOpen && "transform -rotate-45 -translate-y-[6.5px]")}></span>
-          </button>
+          <p style={{ color: "#C9B796", fontSize: ".88rem", maxWidth: "22rem" }}>
+            A powdered breakfast blend crafted in Wales. Rooted in South Indian food tradition.
+          </p>
+          <div style={{ marginTop: "1.25rem" }}>
+            <p style={{ fontSize: ".7rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", color: "#C9B796", marginBottom: ".5rem" }}>Follow Us</p>
+            <div style={{ display: "flex", gap: ".5rem" }}>
+              <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer"
+                style={{ width: 36, height: 36, borderRadius: 8, border: "1px solid rgba(243,230,200,.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#F3E6C8", textDecoration: "none", fontSize: ".75rem", fontWeight: 700 }}>
+                in
+              </a>
+              <div style={{ width: 36, height: 36, borderRadius: 8, border: "1px solid rgba(243,230,200,.12)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgba(243,230,200,.3)", fontSize: ".75rem", cursor: "not-allowed" }} title="Instagram — coming soon">
+                ig
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      {/* Mobile Menu */}
-      <div className={cn(
-        "fixed inset-0 top-[76px] bg-[#1a0800]/98 backdrop-blur-xl z-[199] flex flex-col px-8 py-8 overflow-y-auto transition-opacity duration-300 xl:hidden border-t border-white/10",
-        isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      )}>
-        {navLinks.map((link) => (
-          <Link key={link.path} to={link.path} onClick={closeMenu}
-            className={cn("py-4 text-[15px] font-semibold tracking-[0.5px] uppercase border-b border-white/10",
-              location.pathname === link.path ? "text-[#f5e3b1]" : "text-white/90"
-            )}>
-            {link.name}
-          </Link>
-        ))}
-        {/* Mobile Language switcher */}
-        <div className="pt-6">
-          <p className="text-white/40 text-[11px] font-bold tracking-[2px] uppercase mb-3">Language</p>
-          <div className="grid grid-cols-2 gap-2">
-            {languages.map((l) => (
-              <button key={l.code} onClick={() => { setLang(l.code); closeMenu(); }}
-                className={cn("flex items-center gap-2 px-4 py-3 rounded-lg border transition-colors text-[13px] font-semibold",
-                  lang === l.code ? "border-[#f5e3b1]/40 text-[#f5e3b1] bg-[#f5e3b1]/5" : "border-white/10 text-white/70 hover:border-white/20"
-                )}>
-                <span className="text-[18px]">{l.flag}</span> {l.nativeLabel}
-              </button>
-            ))}
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><Link to="/our-product">Gyda Gofal · 315g</Link></li>
+            <li><Link to="/why-hnm">Why HNM</Link></li>
+            <li><Link to="/pre-order">Register Interest</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><Link to="/our-story">Our Story</Link></li>
+            <li><Link to="/our-journey">Our Journey</Link></li>
+            <li><Link to="/our-story/founders-letter">Founder's Letter</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in Touch</h4>
+          <div style={{ display: "grid", gap: ".75rem" }}>
+            <a href="tel:+447393066783" style={{ color: "#F3E6C8", textDecoration: "none" }}>+44 7393 066783</a>
+            <a href="mailto:harsh@hnmfoodgroup.com" style={{ color: "#F3E6C8", textDecoration: "none", wordBreak: "break-all" }}>harsh@hnmfoodgroup.com</a>
+            <p style={{ color: "#C9B796", fontSize: ".85rem" }}>Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS</p>
           </div>
         </div>
       </div>
-    </>
-  );
-};
 
-const Footer = () => {
-  const { t } = useLanguage();
-  const [legalPage, setLegalPage] = useState<LegalPage>(null);
-
-  return (
-    <>
-      <footer className="bg-[#140600]/95 backdrop-blur-xl text-white/45 pt-12 sm:pt-20 px-4 sm:px-8 pb-0">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-12">
-          {/* Brand */}
-          <div>
-            <Link to="/"><img src="/hnm-logo.svg" alt="HNM Food Groups" className="h-14 w-auto opacity-80 mb-5" /></Link>
-            <p className="text-[14px] leading-[1.8] text-white/60 max-w-[280px]">{t("footer_tagline")}</p>
-            {/* Social Icons */}
-            <div className="mt-6">
-              <p className="text-[11px] font-bold tracking-[2px] uppercase text-[#f5e3b1] mb-3">{t("follow_us")}</p>
-              <div className="flex gap-3">
-                <a href="https://www.linkedin.com/company/hnm-food-groups/" target="_blank" rel="noreferrer" title="LinkedIn"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0077b5]/20 hover:border-[#0077b5]/40 transition-colors group">
-                  <Linkedin size={16} className="text-white/50 group-hover:text-[#0077b5] transition-colors" />
-                </a>
-                <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center opacity-40 cursor-not-allowed" title="Instagram — coming soon">
-                  <Instagram size={16} className="text-white/50" />
-                </div>
-                <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center opacity-40 cursor-not-allowed" title="X / Twitter — coming soon">
-                  <Twitter size={16} className="text-white/50" />
-                </div>
-                <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center opacity-40 cursor-not-allowed" title="Facebook — coming soon">
-                  <Facebook size={16} className="text-white/50" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_products")}</h5>
-            <ul className="space-y-3">
-              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Gyda Gofal · 315g</Link></li>
-              <li><Link to="/contact" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Register Interest</Link></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_company")}</h5>
-            <ul className="space-y-3">
-              <li><Link to="/about"   className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">About Us</Link></li>
-              <li><Link to="/why-us"  className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Why Choose Us</Link></li>
-              <li><Link to="/blog"    className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Blog</Link></li>
-              <li><Link to="/media"   className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Media</Link></li>
-              <li><Link to="/contact" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_contact")}</h5>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2.5">
-                <Phone size={14} className="text-white/40 shrink-0 mt-0.5" />
-                <a href="tel:+447393066783" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">+44 7393 066783</a>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Mail size={14} className="text-white/40 shrink-0 mt-0.5" />
-                <a href="mailto:harsh@hnmfoodgroup.com" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors break-all">harsh@hnmfoodgroup.com</a>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin size={14} className="text-white/40 shrink-0 mt-0.5" />
-                <span className="text-[14px] text-white/60">Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS</span>
-              </div>
-            </div>
+      <div className="notice">
+        <p>
+          <b>HNM Food Group Ltd</b> · Company No. 17007002 · Registered in England and Wales ·
+          Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS.
+          Product available Q4 2026. Full nutrition, allergen and ingredient information is printed on every pack.
+        </p>
+        <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: ".5rem", alignItems: "center" }}>
+          <p>&copy; {new Date().getFullYear()} HNM Food Group Ltd. All rights reserved.</p>
+          <div className="legal-links">
+            <Link to="/privacy" style={{ color: "#C9B796", textDecoration: "none", fontSize: ".8rem" }}>Privacy Policy</Link>
+            <Link to="/terms" style={{ color: "#C9B796", textDecoration: "none", fontSize: ".8rem" }}>Terms</Link>
+            <Link to="/allergens" style={{ color: "#C9B796", textDecoration: "none", fontSize: ".8rem" }}>Allergen Info</Link>
+            <Link to="/food-safety" style={{ color: "#C9B796", textDecoration: "none", fontSize: ".8rem" }}>Food Safety</Link>
           </div>
         </div>
-
-        {/* Legal notice */}
-        <div className="max-w-[1240px] mx-auto mt-10 sm:mt-16 border-t border-white/10 pt-8">
-          <p className="text-[12px] text-white/30 leading-relaxed text-center max-w-[800px] mx-auto">
-            HNM Food Group Ltd &middot; Company No. 17007002 &middot; Registered in England and Wales &middot; Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS. Product available Q4 2026. Full nutrition, allergen and ingredient information is printed on every pack.
-          </p>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="max-w-[1240px] mx-auto mt-6 border-t border-white/10 py-6 pb-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p className="text-[13px] text-white/40">{t("footer_copyright")}</p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {([
-              ["privacy",     "Privacy Policy"],
-              ["terms",       "Terms of Service"],
-              ["food-safety", "Food Safety & Regulations"],
-              ["allergens",   "Allergen Information"],
-            ] as [LegalPage, string][]).map(([key, label]) => (
-              <button key={key} onClick={() => setLegalPage(key)}
-                className="text-[13px] text-white/35 hover:text-white/70 transition-colors">
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </footer>
-
-      <LegalModal page={legalPage} onClose={() => setLegalPage(null)} />
-    </>
-  );
-};
+      </div>
+    </div>
+  </footer>
+);
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div className="min-h-screen flex flex-col font-sans text-white overflow-x-hidden relative z-0">
-    <div className="fixed inset-0 z-[-1]" style={{ background: "radial-gradient(ellipse at 20% 50%, #4a2200 0%, #2c1200 40%, #1a0800 100%)" }} />
+  <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "var(--bg)", color: "var(--ink)", overflowX: "hidden" }}>
     <Header />
-    <main className="flex-grow z-10">{children}</main>
+    <main style={{ flexGrow: 1 }}>{children}</main>
     <Footer />
-    {/* no cookie banner: no tracking on this site */}
   </div>
 );
