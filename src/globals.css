@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: only light;
   --bg: #FBF7EF;
   --oat: #F2E7CF;
   --surface: #F5EDDD;
@@ -27,30 +28,6 @@
   --body: "Satoshi", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #160D06;
-    --oat: #24160B;
-    --surface: #2A1B0F;
-    --ink: #F1E6CF;
-    --muted: #C2B092;
-    --olive: #A9B477;
-    --line: rgba(201,183,150,.22);
-    --gold: #D4AE62;
-    --gold-l: #E2C07A;
-    --accent: #D4AE62;
-    --btn-bg: #D4AE62;
-    --btn-ink: #160D06;
-    --btn-hover: #E2C07A;
-    --cta: #D4AE62;
-    --cta-ink: #160D06;
-    --band: #0F0804;
-    --band-2: #24160B;
-    --band-ink: #F3E6C8;
-    --band-muted: #C2B092;
-    --logo: #F3E6C8;
-  }
-}
 
 * { box-sizing: border-box; }
 
