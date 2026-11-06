@@ -22,11 +22,11 @@ const About = () => {
             {/* Photo */}
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#f5e3b1]/20 shadow-2xl">
+                <div className="w-72 md:w-80 rounded-2xl overflow-hidden border border-[#f5e3b1]/20 shadow-2xl">
                   <img
-                    src="/images/harsh-sanmukh-new.jpeg"
-                    alt="Harsh Sanmukh, Founder & CEO of HNM Food Groups"
-                    className="w-full h-full object-cover"
+                    src="/images/harsh-founder-paris.jpg"
+                    alt="Harsh Sanmukh, Founder of HNM Food Group"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
                 <a
@@ -42,49 +42,55 @@ const About = () => {
 
             {/* Message */}
             <div>
-              <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">A Message from Our Founder & CEO</p>
+              <p className="text-[#f5e3b1] text-[11px] font-bold tracking-[2.5px] uppercase mb-4">A Message from Our Founder</p>
               <h2 className="font-serif text-3xl text-white mb-6">Harsh Sanmukh</h2>
               <div className="space-y-5 text-white/65 text-[16px] leading-relaxed">
                 <p>
-                  "My journey with HNM Food Group began from a deep concern about the state of food in our markets
-                  today. I was troubled by the abundance of unhealthy products filled with preservatives, artificial
-                  agents to improve shelf life, synthetic colours, and artificial flavours designed to enhance taste
-                  at the cost of our health."
-                </p>
-                <p className="text-[#f5e3b1] italic font-medium">
-                  "Food is a basic necessity of human life. No matter how much money you earn, if you don't eat
-                  good food, all of it is waste."
+                  I often sat with my grandmother and mother, watching them prepare wholesome meals using simple
+                  grains, millets and pulses. Their kitchen was filled with real ingredients, warm aromas and stories
+                  of tradition and care. Those everyday conversations made me realise how food brings people closer.
                 </p>
                 <p>
-                  This led me to a simple but profound realisation:{" "}
+                  Inspired by their knowledge, I began experimenting in my own kitchen, bringing those time-honoured
+                  ingredients together in a modern, convenient form for today's busy life. Today, Gyda Gofal, Welsh
+                  for "with care", is the result of that journey: real ingredients, prepared with the same values my
+                  family taught me.
+                </p>
+                <p className="text-[#f5e3b1] italic font-medium">
+                  "Simple conversations. Real change."
+                </p>
+                <p>
                   <strong className="text-white">
-                    'Eat good food to stay healthy, or else you will end up eating medicine like food to stay healthy.'
-                  </strong>{" "}
-                  This philosophy became the bedrock of HNM Food Groups.
+                    From my family's kitchen to yours, this is where our journey begins.
+                  </strong>
                 </p>
               </div>
-              <p className="text-right text-white/50 text-[14px] mt-6 italic">: Harsh Sanmukh, Founder & CEO</p>
+              <p className="text-white/50 text-[14px] mt-6 italic">— Harsh Sanmukh, Founder, HNM Food Group Ltd</p>
             </div>
           </div>
 
-          {/* Our Promise */}
+          {/* Friends / The Name */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 mb-8">
-            <h3 className="font-serif text-3xl text-white mb-5">Our Promise</h3>
-            <div className="space-y-4 text-white/65 text-[16px] leading-relaxed">
-              <p>
-                Every product we create must pass one simple test:{" "}
-                <em className="text-[#f5e3b1] font-semibold">"Would I give this to my own family?"</em>{" "}
-                If the answer is not a resounding yes, it doesn't leave our kitchen. This personal standard
-                ensures that every item bearing the HNM Food Groups name meets the highest standards of quality and purity.
-              </p>
-              <p>
-                My vision is ambitious yet simple:{" "}
-                <strong className="text-[#f5e3b1]">
-                  My aspiration is to create products so pure and wholesome that the whole family can enjoy them with confidence.
-                </strong>{" "}
-                This means no harmful preservatives, no artificial colours, no synthetic flavours just 100% organic
-                goodness that nature intended.
-              </p>
+            <h3 className="font-serif text-3xl text-white mb-5">Why the Name HNM?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4 text-white/65 text-[16px] leading-relaxed">
+                <p>
+                  HNM stands for Harsh, Naveen and Muni, three friends whose conversations about food, tradition and
+                  the opportunity to do something meaningful were the original spark for this company.
+                </p>
+                <p>
+                  The name is a reminder of where we began: not in a boardroom, but in simple, honest conversations
+                  about making something worth caring about.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="/images/hnm-friends.jpg"
+                  alt="Harish, Naveen and Muni, the people behind HNM Food Group"
+                  className="w-full rounded-xl shadow-xl border border-white/10"
+                />
+                <figcaption className="text-white/35 text-[12px] mt-2 text-center italic">Harish, Naveen and Muni</figcaption>
+              </figure>
             </div>
           </div>
 
@@ -93,15 +99,15 @@ const About = () => {
             <div className="bg-white/5 border border-white/10 rounded-xl p-8">
               <h4 className="font-serif text-2xl text-white mb-3">Our Mission</h4>
               <p className="text-white/60 leading-relaxed">
-                To provide families with access to pure, organic, and nutritious food products that support healthy
-                living without compromising on taste or convenience.
+                To bring food traditions rooted in generations of knowledge into modern kitchens, through thoughtfully
+                developed products that are honest about what they are and how they are made.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-8">
               <h4 className="font-serif text-2xl text-white mb-3">Our Vision</h4>
               <p className="text-white/60 leading-relaxed">
-                To become a leading provider of clean-label, natural food products in the UK, setting new standards for quality,
-                health, and sustainability in the food industry.
+                To build a food company in Wales that takes tradition seriously and translates it into products people
+                can trust, whatever their background or morning routine.
               </p>
             </div>
           </div>
@@ -131,10 +137,10 @@ const About = () => {
               <div className="space-y-4">
                 {[
                   { label: "Registered Name", value: "HNM Food Group Ltd" },
-                  { label: "Registered Office", value: "14 Museum Place, Cardiff, Wales, CF10 3BH" },
-                  { label: "Focus", value: "Clean-Label Breakfast Cereals" },
+                  { label: "Company No.", value: "17007002 · Registered in England and Wales" },
+                  { label: "Registered Office", value: "Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS" },
+                  { label: "First Product", value: "Gyda Gofal · 315g Powdered Breakfast Blend" },
                   { label: "Markets", value: "Retail & Airline Catering" },
-                  { label: "Standards", value: "UK & EU Standards (Pending)" },
                 ].map(({ label, value }) => (
                   <div key={label} className="bg-white/5 border border-white/10 rounded-xl px-6 py-5">
                     <p className="text-white/40 text-[11px] font-semibold tracking-wide uppercase mb-1">{label}</p>

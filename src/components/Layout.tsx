@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Linkedin, Instagram, Twitter, Facebook, ChevronDow
 import { cn } from "@/lib/utils";
 import { useLanguage, languages } from "@/context/LanguageContext";
 import LegalModal, { type LegalPage } from "./LegalModal";
-import CookieBanner from "./CookieBanner";
+// CookieBanner removed: no tracking used on this site
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -167,8 +167,8 @@ const Footer = () => {
           <div>
             <h5 className="font-sans font-bold text-[11px] tracking-[2.5px] uppercase text-[#f5e3b1] mb-5">{t("footer_products")}</h5>
             <ul className="space-y-3">
-              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Multi Grain Cereal</Link></li>
-              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Founder's Special</Link></li>
+              <li><Link to="/products" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Gyda Gofal · 315g</Link></li>
+              <li><Link to="/contact" className="text-[14px] text-white/60 hover:text-[#f5e3b1] transition-colors">Register Interest</Link></li>
             </ul>
           </div>
 
@@ -198,16 +198,16 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin size={14} className="text-white/40 shrink-0 mt-0.5" />
-                <span className="text-[14px] text-white/60">14 Museum Place, Cardiff, Wales, CF10 3BH</span>
+                <span className="text-[14px] text-white/60">Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Pre-launch disclaimer */}
+        {/* Legal notice */}
         <div className="max-w-[1240px] mx-auto mt-10 sm:mt-16 border-t border-white/10 pt-8">
           <p className="text-[12px] text-white/30 leading-relaxed text-center max-w-[800px] mx-auto">
-            <strong className="text-white/40">Pre-launch notice:</strong> HNM Food Group Ltd is a pre-launch food company. All product descriptions, nutritional claims, and formulation details reflect current development targets and are subject to change. Organic certification, nutritional analysis, and full regulatory compliance documentation are in progress. Final products may differ from descriptions shown.
+            HNM Food Group Ltd &middot; Company No. 17007002 &middot; Registered in England and Wales &middot; Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS. Product available Q4 2026. Full nutrition, allergen and ingredient information is printed on every pack.
           </p>
         </div>
 
@@ -241,6 +241,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
     <Header />
     <main className="flex-grow z-10">{children}</main>
     <Footer />
-    <CookieBanner />
+    {/* no cookie banner: no tracking on this site */}
   </div>
 );

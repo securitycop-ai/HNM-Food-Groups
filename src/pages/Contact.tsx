@@ -19,7 +19,7 @@ const Contact = () => {
             {[
               { icon: Phone, title: "Phone", label: "Call us", value: "+44 7393 066783", href: "tel:+447393066783" },
               { icon: Mail, title: "Email", label: "General enquiries", value: "harsh@hnmfoodgroup.com", href: "mailto:harsh@hnmfoodgroup.com" },
-              { icon: MapPin, title: "Registered Office", label: "HNM Food Group Ltd", value: "14 Museum Place, Cardiff, Wales, CF10 3BH", href: null },
+              { icon: MapPin, title: "Registered Office", label: "HNM Food Group Ltd · Co. No. 17007002", value: "Welsh ICE, Tŷ Merlin, Caerphilly Business Park, Van Road, Caerphilly CF83 3GS", href: null },
               { icon: Clock, title: "Office Hours", label: "Monday – Friday", value: "9:00 AM – 6:00 PM", href: null },
             ].map(({ icon: Icon, title, label, value, href }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-8 hover:border-[#f5e3b1]/30 transition-colors">

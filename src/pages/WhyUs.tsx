@@ -17,12 +17,12 @@ const WhyUs = () => {
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Leaf, title: "Natural Ingredients", desc: "We aim to source naturally derived ingredients from trusted farms. Organic certification is in progress." },
-              { icon: ShieldCheck, title: "No Preservatives", desc: "Our formulations are designed to be free from synthetic preservatives, artificial colours, and chemical additives." },
-              { icon: Zap, title: "Plant Protein Focus", desc: "Our formulations are designed to include plant-based protein to support a balanced breakfast." },
-              { icon: Heart, title: "Family Focused", desc: "Created with every member of the family in mind for adults and children over 12 months. Always check allergen information.." },
-              { icon: Globe, title: "Culturally Inspired", desc: "Drawing on global culinary traditions to create breakfast experiences that are both nutritious and culturally meaningful." },
-              { icon: FlaskConical, title: "R&D Driven", desc: "Backed by rigorous product development and retail market research to meet evolving UK consumer preferences." },
+              { icon: Leaf, title: "Ingredient Diversity", desc: "Grains, millets, pulses, legumes, rice, seeds and dates, bringing several ingredient families into one carefully developed blend." },
+              { icon: ShieldCheck, title: "No Artificial Additives", desc: "No artificial colours, no artificial preservatives, no refined sugar, no synthetic fortification and no nuts." },
+              { icon: Zap, title: "Rooted in Tradition", desc: "Inspired by traditional South Indian food knowledge and the ingredients used in family kitchens across generations." },
+              { icon: Heart, title: "Made for Modern Mornings", desc: "A convenient powdered format: add 21g to 200ml of hot milk or water, stir and enjoy. Three steps. That's it." },
+              { icon: Globe, title: "Built in Wales", desc: "Developed in Wales with support from Cardiff Metropolitan University's ZERO2FIVE Food Industry Centre." },
+              { icon: FlaskConical, title: "We Develop Before We Claim", desc: "Full nutrition and allergen details are on every pack. We only say what the finished product can stand behind." },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/5 border border-white/10 rounded-xl p-8 hover:border-[#f5e3b1]/30 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#f5e3b1]/10 flex items-center justify-center mb-6">

@@ -24,6 +24,9 @@ const Home = () => {
             {t("hero_title1")}<br />
             <span className="text-[#f5e3b1]">{t("hero_title2")}</span>
           </h1>
+          <p className="text-[#f5e3b1]/80 text-sm font-semibold tracking-widest uppercase mb-3">
+            Gyda Gofal &mdash; Welsh for &ldquo;With Care&rdquo;
+          </p>
           <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-[560px] mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
             {t("hero_sub")}
           </p>
@@ -68,20 +71,14 @@ const Home = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-8 border-t border-white/10">
         <div className="max-w-[1240px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
-            {/* Product image - Coming Soon masked */}
+            {/* Product image */}
             <div className="relative flex items-center justify-center order-1 lg:order-1">
-              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden bg-[#f5e3b1]/5 border border-[#f5e3b1]/10 shadow-2xl relative">
+              <div className="w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/hnm-cereal-box.svg"
-                  alt="HNM Multi Grain Cereal Coming Soon"
-                  className="w-full h-auto object-contain p-4 blur-sm opacity-60"
+                  src="/images/gyda-gofal-pack-front.jpg"
+                  alt="Gyda Gofal by HNM Food Group - 315g powdered breakfast blend"
+                  className="w-full h-auto object-contain"
                 />
-                {/* Coming Soon overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#1a0800]/50 backdrop-blur-[2px]">
-                  <p className="text-[#f5e3b1] text-[10px] font-bold tracking-[2.5px] uppercase mb-2">Coming Soon</p>
-                  <p className="font-serif text-2xl sm:text-3xl text-white font-bold">Q4 2026</p>
-                  <p className="text-white/50 text-[12px] mt-2">Product in Development</p>
-                </div>
               </div>
             </div>
             {/* Text */}
@@ -90,7 +87,14 @@ const Home = () => {
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-4 sm:mb-6">{t("product_heading")}</h2>
               <p className="text-white/65 text-[15px] sm:text-[16px] leading-relaxed mb-5 sm:mb-6">{t("product_desc")}</p>
               <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
-                {["Multi grain blends from organic farms (certification pending)","No added sugar","Naturally multi grain-based (not tested for gluten)","Contains B vitamins and iron","Suitable for adults and children over 12 months"].map(item => (
+                {[
+                  "Grains, millets, pulses, legumes, rice and dates",
+                  "No artificial colours or preservatives",
+                  "No refined sugar",
+                  "No synthetic fortification",
+                  "No nuts",
+                  "Add 21g to 200ml hot milk or water, stir and enjoy",
+                ].map(item => (
                   <li key={item} className="flex items-center gap-3 text-white/70 text-[13px] sm:text-[14px]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#f5e3b1] shrink-0" />{item}
                   </li>
