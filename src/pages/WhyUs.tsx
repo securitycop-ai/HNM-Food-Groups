@@ -47,10 +47,10 @@ const WhyUs = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "UK Food Safety", value: "Q4 2026" },
-                { label: "Clean Label", value: "Q4 2026" },
-                { label: "Allergen Info", value: "Q4 2026" },
-                { label: "Nutritional Labels", value: "Q4 2026" },
+                { label: "UK Food Safety", value: "Built In" },
+                { label: "Clean Label", value: "Verified" },
+                { label: "Allergen Info", value: "On Pack" },
+                { label: "Nutritional Labels", value: "On Pack" },
               ].map(({ label, value }) => (
                 <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-6">
                   <p className="text-[#f5e3b1] font-bold text-[18px] mb-1">{value}</p>
