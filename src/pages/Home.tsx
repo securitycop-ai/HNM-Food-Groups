@@ -14,6 +14,7 @@ const Home = () => {
             <source src="/hnm-brand-video.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[#1a0800]/70" />
+          <div className="absolute bottom-0 right-0 w-[120px] h-[120px] bg-[#1a0800] z-[5] pointer-events-none" />
         </div>
         <div className="max-w-[1240px] mx-auto text-center z-10 pt-[76px] px-4">
           <div className="inline-flex items-center gap-2 bg-[#f5e3b1]/10 border border-[#f5e3b1]/20 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8">
